@@ -17,6 +17,7 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_splash);
+        getWindow().setBackgroundDrawable(null);
         initBmob();
     }
 
