@@ -6,7 +6,7 @@ import com.sean.partner.R;
 
 
 /**
- * Created by sks on 2016/9/9.
+ * Created by sean on 2016/9/9.
  */
 public class UserConfigures extends SharedPreferenceSupport{
 

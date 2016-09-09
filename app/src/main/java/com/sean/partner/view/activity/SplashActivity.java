@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 
+import com.sean.partner.PartnerApplication;
 import com.sean.partner.R;
+import com.sean.partner.Utils.UserConfigures;
 
 import cn.bmob.v3.Bmob;
 
@@ -29,6 +31,7 @@ public class SplashActivity extends Activity {
     }
 
     private boolean getGuide() {
+        UserConfigures configures = ((PartnerApplication)getApplication()).getUserConfigures();
         return false;
     }
 

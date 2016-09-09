@@ -3,7 +3,7 @@ package com.sean.partner.meta;
 import cn.bmob.v3.BmobUser;
 
 /**
- * Created by sks on 2016/9/8.
+ * Created by sean on 2016/9/8.
  */
 public class User extends BmobUser{
     /*  BmobUser除了从BmobObject继承的属性外，还有几个特定的属性：
