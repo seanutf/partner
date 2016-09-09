@@ -14,4 +14,12 @@ public class UserConfigures extends SharedPreferenceSupport{
     public UserConfigures(Context context) {
         super(context, PREFS_NAME);
     }
+
+    public void setUserGuide(String versionCode,boolean value){
+        setBoolean(versionCode,value);
+    }
+
+    public boolean getUserGuide(String versionCode){
+        return  getBoolean(versionCode,false);
+    }
 }

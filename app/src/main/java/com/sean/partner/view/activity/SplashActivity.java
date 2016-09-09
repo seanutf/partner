@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
+import android.widget.Toast;
 
 import com.sean.partner.PartnerApplication;
 import com.sean.partner.R;
@@ -23,16 +24,17 @@ public class SplashActivity extends Activity {
         initBmob();
         //发现有展示过引导页面，直接去登录等等，没有展示过，去展示
         if(getGuide()){
-
+            Toast.makeText(this,"不展示引导页面",Toast.LENGTH_SHORT).show();
         } else {
-
+            Toast.makeText(this,"展示引导页面",Toast.LENGTH_SHORT).show();
         }
 
     }
 
     private boolean getGuide() {
         UserConfigures configures = ((PartnerApplication)getApplication()).getUserConfigures();
-        return false;
+        boolean result = configures.getUserGuide(((PartnerApplication)getApplication()).getVersion());
+        return result;
     }
 
     /** Bmob后端云服务平台初始化
