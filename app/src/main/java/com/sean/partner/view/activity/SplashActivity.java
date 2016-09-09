@@ -22,6 +22,8 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.activity_splash);
         getWindow().setBackgroundDrawable(null);
         initBmob();
+        //todo 检查用户登录情况
+
         //发现有展示过引导页面，直接去登录等等，没有展示过，去展示
         if(getGuide()){
             Toast.makeText(this,"不展示引导页面",Toast.LENGTH_SHORT).show();
