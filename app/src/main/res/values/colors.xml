@@ -3,4 +3,15 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <!-- 一般文本 -->
+    <color name="text_a">#ff434343</color>
+    <!-- 弱文本 -->
+    <color name="text_b">#ff808080</color>
+    <!-- 不可操作文字 -->
+    <color name="text_c">#ffBCBCBC</color>
+    <!-- 链接文字 -->
+    <color name="text_d">#ff3498DB</color>
+    <!-- 警告 突出 -->
+    <color name="text_e">#ffE74C3C</color>
+    <color name="text_f">#fff98700</color>
 </resources>

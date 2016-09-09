@@ -2,5 +2,6 @@
     <!--应用全局字符串-->
     <string name="app_name">求陪</string>
     <!--启动页面-->
-    <string name="text_ad_splash">  相   遇  \n因         为          相           同  </string>
+    <string name="app_name_in_splash">求 陪</string>
+    <string name="text_ad_splash">  相        遇  \n因         为          相           同  </string>
 </resources>
