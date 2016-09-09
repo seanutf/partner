@@ -19,6 +19,17 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.activity_splash);
         getWindow().setBackgroundDrawable(null);
         initBmob();
+        //发现有展示过引导页面，直接去登录等等，没有展示过，去展示
+        if(getGuide()){
+
+        } else {
+
+        }
+
+    }
+
+    private boolean getGuide() {
+        return false;
     }
 
     /** Bmob后端云服务平台初始化
