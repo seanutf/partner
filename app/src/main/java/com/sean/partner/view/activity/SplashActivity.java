@@ -1,6 +1,7 @@
 package com.sean.partner.view.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
@@ -39,9 +40,11 @@ public class SplashActivity extends Activity {
         } else {
             //todo 引导页面,并且在引导页面检查用户登录情况
             Toast.makeText(this,"展示引导页面",Toast.LENGTH_SHORT).show();
-            if(getCurrentUser()){
+            startActivity(new Intent(this,UserGuideActivity.class));
 
-            }
+//            if(getCurrentUser()){
+//
+//            }
         }
     }
 
