@@ -41,6 +41,7 @@ public class SplashActivity extends Activity {
             //todo 引导页面,并且在引导页面检查用户登录情况
             Toast.makeText(this,"展示引导页面",Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this,UserGuideActivity.class));
+            finish();
 
 //            if(getCurrentUser()){
 //
