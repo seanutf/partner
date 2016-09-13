@@ -14,4 +14,5 @@
     <!-- 警告 突出 -->
     <color name="text_e">#ffE74C3C</color>
     <color name="text_f">#fff98700</color>
+    <color name="text_activity_guide_selected">#888</color>
 </resources>
