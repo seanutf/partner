@@ -1,30 +1,23 @@
 package com.sean.partner.view.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
-
 import com.sean.partner.PartnerApplication;
 import com.sean.partner.R;
 import com.sean.partner.Utils.UserConfigures;
-import com.sean.partner.meta.User;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import cn.bmob.v3.Bmob;
-import cn.bmob.v3.BmobUser;
 
-public class SplashActivity extends Activity {
+public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
        //setTheme(R.style.m);
+        long onCreateTime = System.currentTimeMillis();
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         setContentView(R.layout.activity_splash);
         getWindow().setBackgroundDrawable(null);
         initBmob();
