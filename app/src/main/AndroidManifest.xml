@@ -32,6 +32,8 @@
         </activity>
         <activity android:name="com.sean.partner.view.activity.UserGuideActivity">
         </activity>
+        <activity android:name="com.sean.partner.view.activity.MainActivity">
+        </activity>
     </application>
 
 </manifest>

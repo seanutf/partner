@@ -24,15 +24,14 @@ public class SplashActivity extends AppCompatActivity {
 
         //发现有展示过引导页面，直接去登录等等，没有展示过，去展示
         if(getGuide()){
-            Toast.makeText(this,"不展示引导页面",Toast.LENGTH_SHORT).show();
             if(((PartnerApplication)getApplication()).getCurrentUser()){
-                //todo 直接展示主界面
+                startActivity(new Intent(this,MainActivity.class));
+                finish();
             } else {
                 //todo 展示登录注册页面
             }
         } else {
             //引导页面
-            Toast.makeText(this,"展示引导页面",Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this,UserGuideActivity.class));
             finish();
         }

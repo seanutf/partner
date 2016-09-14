@@ -1,5 +1,6 @@
 package com.sean.partner.view.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -121,7 +122,8 @@ public class UserGuideActivity extends AppCompatActivity{
         finish();
         overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
         if(((PartnerApplication)getApplication()).getCurrentUser()){
-            //todo 直接展示主界面
+            startActivity(new Intent(this,MainActivity.class));
+            finish();
         } else {
             //todo 展示登录注册页面
         }
