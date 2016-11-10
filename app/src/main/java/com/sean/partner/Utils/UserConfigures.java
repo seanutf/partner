@@ -1,8 +1,6 @@
-package com.sean.partner.Utils;
+package com.sean.partner.utils;
 
 import android.content.Context;
-
-import com.sean.partner.R;
 
 
 /**

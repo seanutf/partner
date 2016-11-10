@@ -5,7 +5,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.widget.Toast;
 
-import com.sean.partner.Utils.UserConfigures;
+import com.sean.partner.utils.UserConfigures;
 import com.sean.partner.meta.User;
 
 import cn.bmob.v3.BmobUser;

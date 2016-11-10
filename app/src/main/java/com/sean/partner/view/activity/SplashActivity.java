@@ -4,10 +4,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
-import android.widget.Toast;
+
 import com.sean.partner.PartnerApplication;
 import com.sean.partner.R;
-import com.sean.partner.Utils.UserConfigures;
+import com.sean.partner.utils.UserConfigures;
 import cn.bmob.v3.Bmob;
 
 public class SplashActivity extends AppCompatActivity {
@@ -28,7 +28,8 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(new Intent(this,MainActivity.class));
                 finish();
             } else {
-                //todo 展示登录注册页面
+                //展示登录注册页面
+                startActivity(new Intent(this,UserLoginActivity.class));
             }
         } else {
             //引导页面

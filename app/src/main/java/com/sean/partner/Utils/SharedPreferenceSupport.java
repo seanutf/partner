@@ -1,4 +1,4 @@
-package com.sean.partner.Utils;
+package com.sean.partner.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

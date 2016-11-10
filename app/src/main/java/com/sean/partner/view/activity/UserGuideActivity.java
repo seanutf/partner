@@ -125,7 +125,8 @@ public class UserGuideActivity extends AppCompatActivity{
             startActivity(new Intent(this,MainActivity.class));
             finish();
         } else {
-            //todo 展示登录注册页面
+            //展示登录注册页面
+            startActivity(new Intent(this,UserLoginActivity.class));
         }
     }
 
