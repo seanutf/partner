@@ -13,4 +13,7 @@
     <string name="welcom_content_02">Write on your own or invite more people to contribute.</string>
     <string name="welcom_head_03">Automatically save to the web</string>
     <string name="welcom_content_03">Never lose your progress, so you can keep working from any computer or device.</string>
+    <!--登录注册页面-->
+    <string name="text_activity_login_sign_up">注册</string>
+    <string name="text_activity_login_login_in">登录</string>
 </resources>

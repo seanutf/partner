@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.sean.partner.R;
 
 /**
- * Created by sks on 2016/9/14.
+ * Created by sean on 2016/9/14.
  */
 public class SignUpContainer  extends RelativeLayout {
 

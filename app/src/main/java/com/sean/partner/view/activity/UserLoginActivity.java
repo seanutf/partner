@@ -44,9 +44,5 @@ public class UserLoginActivity extends AppCompatActivity{
                 //Add your task here.
             }
         });
-
-
-
     }
-
 }
