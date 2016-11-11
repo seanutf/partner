@@ -16,4 +16,6 @@
     <!--登录注册页面-->
     <string name="text_activity_login_sign_up">注册</string>
     <string name="text_activity_login_login_in">登录</string>
+    <!--主页面-->
+    <string name="text_activity_main_notice">这是主界面</string>
 </resources>
