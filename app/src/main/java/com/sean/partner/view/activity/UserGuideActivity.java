@@ -43,7 +43,6 @@ public class UserGuideActivity extends AppCompatActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         setContentView(R.layout.activity_user_guide);
         initView();
         pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
