@@ -1,8 +1,8 @@
 <resources>
     <!--应用全局字符串-->
-    <string name="app_name">求陪</string>
+    <string name="app_name">同趣</string>
     <!--启动页面-->
-    <string name="app_name_in_splash">求 陪</string>
+    <string name="app_name_in_splash">同趣</string>
     <string name="text_ad_splash">  相        遇  \n因         为          相           同  </string>
     <!--引导页面-->
     <string name="text_activity_guide_done">完成</string>
