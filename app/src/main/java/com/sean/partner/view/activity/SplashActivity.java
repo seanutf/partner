@@ -8,6 +8,7 @@ import android.view.WindowManager;
 import com.sean.partner.PartnerApplication;
 import com.sean.partner.R;
 import com.sean.partner.utils.UserConfigures;
+
 import cn.bmob.v3.Bmob;
 
 public class SplashActivity extends AppCompatActivity {

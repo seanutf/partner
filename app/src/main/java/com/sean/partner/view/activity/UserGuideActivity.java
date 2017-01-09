@@ -125,7 +125,7 @@ public class UserGuideActivity extends AppCompatActivity{
             finish();
         } else {
             //展示登录注册页面
-            startActivity(new Intent(this,UserLoginActivity.class));
+            startActivity(new Intent(this,UserUnLoginActivity.class));
         }
     }
 

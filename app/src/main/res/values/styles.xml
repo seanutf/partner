@@ -17,5 +17,12 @@
         <item name="android:textSize">@dimen/welcome_content</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
+    <style name="ActivityTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
 
 </resources>

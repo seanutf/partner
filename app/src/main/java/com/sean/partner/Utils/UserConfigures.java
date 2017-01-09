@@ -6,7 +6,7 @@ import android.content.Context;
 /**
  * Created by sean on 2016/9/9.
  */
-public class UserConfigures extends SharedPreferenceSupport{
+public class UserConfigures extends SharedPreferenceSupport {
 
     private static final String  PREFS_NAME = "user_configure";
     public UserConfigures(Context context) {
