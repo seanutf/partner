@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.sean.partner.R;
 
@@ -16,6 +17,11 @@ import com.sean.partner.R;
  */
 
 public class UserLoginFragment  extends Fragment {
+
+    private ToRegisterListener toRegisterListener;
+    public interface  ToRegisterListener{
+        void toRegister();
+    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -34,12 +40,29 @@ public class UserLoginFragment  extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_login_in, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_login_in, container, false);
+        return rootView;
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        initView(view);
+    }
+
+    private void initView(View view) {
+        TextView tvRegister = (TextView)view.findViewById(R.id.tv_to_register);
+        tvRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(toRegisterListener != null)
+                    toRegisterListener.toRegister();
+            }
+        });
+    }
+
+    public void setRegisterListener(ToRegisterListener toRegisterListener){
+        this.toRegisterListener = toRegisterListener;
     }
 
     @Override
