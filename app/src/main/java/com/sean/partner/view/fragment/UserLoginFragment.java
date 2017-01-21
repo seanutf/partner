@@ -19,10 +19,6 @@ import com.sean.partner.view.activity.UserUnLoginActivity;
 
 public class UserLoginFragment  extends Fragment {
 
-    private ToRegisterListener toRegisterListener;
-    public interface  ToRegisterListener{
-        void toRegister();
-    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -59,10 +55,6 @@ public class UserLoginFragment  extends Fragment {
                 ((UserUnLoginActivity)getActivity()).viewPager.setCurrentItem(1);
             }
         });
-    }
-
-    public void setRegisterListener(ToRegisterListener toRegisterListener){
-        this.toRegisterListener = toRegisterListener;
     }
 
     @Override
