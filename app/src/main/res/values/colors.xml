@@ -3,6 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorWhite">#FFFFFF</color>
     <!-- 一般文本 -->
     <color name="text_a">#ff434343</color>
     <!-- 弱文本 -->

@@ -8,8 +8,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.sean.partner.R;
+import com.sean.partner.view.activity.UserUnLoginActivity;
 
 /**
  * Created by sean on 2017/1/7.
@@ -41,6 +43,17 @@ public class UserRegisterFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        initView(view);
+    }
+
+    private void initView(View view) {
+        TextView tvLogin = (TextView)view.findViewById(R.id.tv_to_login);
+        tvLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((UserUnLoginActivity)getActivity()).viewPager.setCurrentItem(0);
+            }
+        });
     }
 
     @Override

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.sean.partner.R;
+import com.sean.partner.view.activity.UserUnLoginActivity;
 
 /**
  * Created by sean on 2017/1/7.
@@ -55,8 +56,7 @@ public class UserLoginFragment  extends Fragment {
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(toRegisterListener != null)
-                    toRegisterListener.toRegister();
+                ((UserUnLoginActivity)getActivity()).viewPager.setCurrentItem(1);
             }
         });
     }
