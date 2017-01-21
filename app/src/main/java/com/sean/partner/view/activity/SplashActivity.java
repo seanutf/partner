@@ -29,16 +29,19 @@ public class SplashActivity extends AppCompatActivity {
                 //发现有展示过引导页面，直接去登录等等，没有展示过，去展示
                 if(getGuide()){
                     if(((PartnerApplication)getApplication()).getCurrentUser()){
-                        startActivity(new Intent(SplashActivity.this,MainActivity.class));
                         finish();
+                        startActivity(new Intent(SplashActivity.this,MainActivity.class));
+
                     } else {
                         //展示登录注册页面
-                        startActivity(new Intent(SplashActivity.this,UserLoginActivity.class));
+                        finish();
+                        startActivity(new Intent(SplashActivity.this,UserUnLoginActivity.class));
                     }
                 } else {
                     //引导页面
-                    startActivity(new Intent(SplashActivity.this,UserGuideActivity.class));
                     finish();
+                    startActivity(new Intent(SplashActivity.this,UserGuideActivity.class));
+
                 }
             }
         },2000);

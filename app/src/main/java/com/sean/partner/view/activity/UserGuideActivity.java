@@ -3,7 +3,6 @@ package com.sean.partner.view.activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,8 +12,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -23,6 +20,7 @@ import android.widget.LinearLayout;
 import com.nineoldandroids.view.ViewHelper;
 import com.sean.partner.PartnerApplication;
 import com.sean.partner.R;
+import com.sean.partner.utils.UserConfigures;
 import com.sean.partner.view.fragment.UserGuideFragment;
 
 /**
@@ -120,6 +118,7 @@ public class UserGuideActivity extends AppCompatActivity{
     private void endGuide() {
         finish();
         overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
+        setGuideDone();
         if(((PartnerApplication)getApplication()).getCurrentUser()){
             startActivity(new Intent(this,MainActivity.class));
             finish();
@@ -246,5 +245,10 @@ public class UserGuideActivity extends AppCompatActivity{
                 }
             }
         }
+    }
+
+    private void setGuideDone() {
+        UserConfigures configures = ((PartnerApplication)getApplication()).getUserConfigures();
+        configures.setUserGuide(((PartnerApplication)getApplication()).getVersion(),true);
     }
 }

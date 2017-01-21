@@ -76,8 +76,9 @@ public class UserUnLoginActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        finish();
+    public void finish() {
+        super.finish();
         startActivity(new Intent(this,MainActivity.class));
+        overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
     }
 }
