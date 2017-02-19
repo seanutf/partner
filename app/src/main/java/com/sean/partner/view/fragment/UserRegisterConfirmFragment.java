@@ -9,17 +9,25 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.sean.partner.R;
-import com.sean.partner.view.activity.UserUnLoginActivity;
+
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
+
+import static com.sean.partner.view.activity.UserUnLoginActivity.USER_REGISTER_DATA;
 
 /**
- * Created by sean on 2017/1/7.
+ * Created by sean on 2017/2/19.
  */
 
-public class UserLoginFragment  extends Fragment {
+public class UserRegisterConfirmFragment extends Fragment{
 
+    BmobUser user;
     Activity activity;
 
     @Override
@@ -30,7 +38,7 @@ public class UserLoginFragment  extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.activity = (Activity) context;
+        this.activity = (Activity)context;
     }
 
     @Override
@@ -41,7 +49,7 @@ public class UserLoginFragment  extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_login_in, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_user_register_confirm, container, false);
         return rootView;
     }
 
@@ -52,15 +60,38 @@ public class UserLoginFragment  extends Fragment {
     }
 
     private void initView(View view) {
-        TextView tvRegister = (TextView)view.findViewById(R.id.tv_to_register);
-        TextView tvloginTitle = (TextView)activity.findViewById(R.id.unlogin_title);
-        tvloginTitle.setText("同趣—登录");
-        tvRegister.setOnClickListener(new View.OnClickListener() {
+        Button btnRegister = (Button)view.findViewById(R.id.btn_register_confirm);
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((UserUnLoginActivity)getActivity()).viewPager.setCurrentItem(0);
+                toRegisterUser();
             }
         });
+        TextView tvRegisterInfo = (TextView)view.findViewById(R.id.tv_confirm_account);
+        Bundle bundle = getArguments();//从activity传过来的Bundle
+        if(bundle!=null){
+            user = (BmobUser)bundle.getSerializable(USER_REGISTER_DATA);
+        }
+
+        if(user != null){
+            tvRegisterInfo.setText("确定要使用" + user.getEmail() + "作为注册账户吗？");
+        }
+
+    }
+
+    private void toRegisterUser() {
+        //注意：不能用save方法进行注册
+        user.signUp(new SaveListener<BmobUser>() {
+            @Override
+            public void done(BmobUser s, BmobException e) {
+                if(e==null){
+                    //toast("注册成功:" +s.toString());
+                }else{
+                    //loge(e);
+                }
+            }
+        });
+
     }
 
     @Override

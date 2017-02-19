@@ -6,27 +6,34 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.sean.partner.R;
 import com.sean.partner.view.fragment.UserLoginFragment;
+import com.sean.partner.view.fragment.UserRegisterConfirmFragment;
 import com.sean.partner.view.fragment.UserRegisterFragment;
 
 import java.util.ArrayList;
+
+import cn.bmob.v3.BmobUser;
 
 
 /**
  * Created by sean on 2017/1/7.
  */
 
-public class UserUnLoginActivity extends AppCompatActivity {
+public class UserUnLoginActivity extends AppCompatActivity implements UserRegisterFragment.RegisterUserDataListener{
 
 
     public ViewPager viewPager;
     UserLoginFragment userLoginFragment;
     UserRegisterFragment userRegisterFragment;
     ArrayList fragmentList;
+
+    public static final String  USER_REGISTER_DATA = "USER_REGISTER_DATA";
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,9 +41,9 @@ public class UserUnLoginActivity extends AppCompatActivity {
         initView();
 
         fragmentList = new ArrayList<Fragment>();
-
-        fragmentList.add(userLoginFragment);
         fragmentList.add(userRegisterFragment);
+        fragmentList.add(userLoginFragment);
+
 
         viewPager.setAdapter(new LoginViewPagerAdapter(getSupportFragmentManager()));
 
@@ -47,10 +54,11 @@ public class UserUnLoginActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.vp_login);
         userLoginFragment = new UserLoginFragment();
         userRegisterFragment = new UserRegisterFragment();
+        userRegisterFragment.setRegisterUserDataListener(this);
     }
 
 
-    public class LoginViewPagerAdapter extends FragmentPagerAdapter {
+    public class LoginViewPagerAdapter extends FragmentStatePagerAdapter {
         public LoginViewPagerAdapter(FragmentManager fm) {
             super(fm);
             // TODO Auto-generated constructor stub
@@ -80,5 +88,17 @@ public class UserUnLoginActivity extends AppCompatActivity {
         super.finish();
         startActivity(new Intent(this,MainActivity.class));
         overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
+    }
+
+    @Override
+    public void userData(BmobUser user) {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(USER_REGISTER_DATA, user);
+        UserRegisterConfirmFragment userRegisterConfirmFragment = new UserRegisterConfirmFragment();
+        userRegisterConfirmFragment.setArguments(bundle);
+        transaction.add(R.id.root_register_confirm_fragment, userRegisterConfirmFragment);
+        transaction.commit();
     }
 }
