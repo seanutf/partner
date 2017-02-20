@@ -63,24 +63,29 @@ public class UserRegisterFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initView(view);
+        initView();
     }
 
-    private void initView(View view) {
-        TextView tvLogin = (TextView)view.findViewById(R.id.tv_to_login);
+    public void setToolBarTitle(){
         TextView tvloginTitle = (TextView)activity.findViewById(R.id.unlogin_title);
         tvloginTitle.setText("同趣—注册");
-        etUserName = (EditText)view.findViewById(R.id.et_register_name);
-        etUserPassword = (EditText)view.findViewById(R.id.et_register_password);
-        etUserAccount = (EditText)view.findViewById(R.id.et_register_account);
-        etUserName = (EditText)view.findViewById(R.id.et_register_name);
+    }
+
+    private void initView() {
+        TextView tvLogin = (TextView)rootView.findViewById(R.id.tv_to_login);
+        TextView tvloginTitle = (TextView)activity.findViewById(R.id.unlogin_title);
+        tvloginTitle.setText("同趣—注册");
+        etUserName = (EditText)rootView.findViewById(R.id.et_register_name);
+        etUserPassword = (EditText)rootView.findViewById(R.id.et_register_password);
+        etUserAccount = (EditText)rootView.findViewById(R.id.et_register_account);
+        etUserName = (EditText)rootView.findViewById(R.id.et_register_name);
         tvLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((UserUnLoginActivity)getActivity()).viewPager.setCurrentItem(1);
             }
         });
-        Button btnRegister = (Button)view.findViewById(R.id.btn_register);
+        Button btnRegister = (Button)rootView.findViewById(R.id.btn_register);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

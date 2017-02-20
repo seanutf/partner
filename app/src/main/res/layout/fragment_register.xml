@@ -84,9 +84,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_to_login"
-                android:layout_gravity="left"
-                android:layout_marginLeft="10dp"
-                android:text="已有账号？立即登录"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dp"
+                android:text="已有账号？立即登录>>"
                 android:textColor="#ffffff"
                 android:layout_marginTop="25dp"/>
         </LinearLayout>

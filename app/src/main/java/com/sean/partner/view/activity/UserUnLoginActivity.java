@@ -46,6 +46,28 @@ public class UserUnLoginActivity extends AppCompatActivity implements UserRegist
 
 
         viewPager.setAdapter(new LoginViewPagerAdapter(getSupportFragmentManager()));
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if(position == 0){
+                    UserRegisterFragment userRegisterFragment = (UserRegisterFragment)fragmentList.get(position);//获取被切换到的页面
+                    userRegisterFragment.setToolBarTitle();
+                }else if(position == 1){
+                    UserLoginFragment userLoginFragment = (UserLoginFragment)fragmentList.get(position);//获取被切换到的页面
+                    userLoginFragment.setToolBarTitle();
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         // todo 根据设备号是否登录注册过来区分是显示登录还是注册
     }

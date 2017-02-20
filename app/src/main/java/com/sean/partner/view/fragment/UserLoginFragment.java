@@ -21,6 +21,7 @@ import com.sean.partner.view.activity.UserUnLoginActivity;
 public class UserLoginFragment  extends Fragment {
 
     Activity activity;
+    View rootView;
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -41,20 +42,23 @@ public class UserLoginFragment  extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_login_in, container, false);
+        rootView = inflater.inflate(R.layout.fragment_login_in, container, false);
         return rootView;
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initView(view);
+        initView();
     }
 
-    private void initView(View view) {
-        TextView tvRegister = (TextView)view.findViewById(R.id.tv_to_register);
+    public void setToolBarTitle(){
         TextView tvloginTitle = (TextView)activity.findViewById(R.id.unlogin_title);
         tvloginTitle.setText("同趣—登录");
+    }
+
+    private void initView() {
+        TextView tvRegister = (TextView)rootView.findViewById(R.id.tv_to_register);
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
