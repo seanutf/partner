@@ -29,7 +29,7 @@
                     android:paddingLeft="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
-                    android:hint="数字,中文范围内的昵称" />
+                    android:hint="数字,英文,中文范围内的昵称" />
 
 
             </android.support.design.widget.TextInputLayout>
