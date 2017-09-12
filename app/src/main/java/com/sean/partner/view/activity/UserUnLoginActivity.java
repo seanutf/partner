@@ -83,7 +83,6 @@ public class UserUnLoginActivity extends AppCompatActivity implements UserRegist
     public class LoginViewPagerAdapter extends FragmentStatePagerAdapter {
         public LoginViewPagerAdapter(FragmentManager fm) {
             super(fm);
-            // TODO Auto-generated constructor stub
         }
 
         @Override
@@ -98,7 +97,6 @@ public class UserUnLoginActivity extends AppCompatActivity implements UserRegist
 
         @Override
         public CharSequence getPageTitle(int position) {
-            // TODO Auto-generated method stub
             return "";
         }
 
