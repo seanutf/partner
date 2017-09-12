@@ -85,6 +85,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_to_login"
                 android:layout_gravity="right"
+                android:padding="5dp"
                 android:layout_marginRight="10dp"
                 android:text="已有账号？立即登录>>"
                 android:textColor="#ffffff"
