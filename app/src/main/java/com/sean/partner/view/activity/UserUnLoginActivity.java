@@ -119,6 +119,6 @@ public class UserUnLoginActivity extends AppCompatActivity implements UserRegist
         UserRegisterConfirmFragment userRegisterConfirmFragment = new UserRegisterConfirmFragment();
         userRegisterConfirmFragment.setArguments(bundle);
         transaction.add(R.id.root_register_confirm_fragment, userRegisterConfirmFragment);
-        transaction.commit();
+        transaction.commitNow();
     }
 }
