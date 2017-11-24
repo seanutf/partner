@@ -30,7 +30,7 @@ public class SplashActivity extends AppCompatActivity {
                 if(getGuide()){
                     if(((PartnerApplication)getApplication()).getCurrentUser()){
                         finish();
-                        startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                        startActivity(new Intent(SplashActivity.this,HomeActivity.class));
 
                     } else {
                         //展示登录注册页面

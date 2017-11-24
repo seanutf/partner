@@ -120,7 +120,7 @@ public class UserGuideActivity extends AppCompatActivity{
         overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
         setGuideDone();
         if(((PartnerApplication)getApplication()).getCurrentUser()){
-            startActivity(new Intent(this,MainActivity.class));
+            startActivity(new Intent(this,HomeActivity.class));
             finish();
         } else {
             //展示登录注册页面

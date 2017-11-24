@@ -18,4 +18,10 @@
     <string name="text_activity_login_login_in">登录</string>
     <!--主页面-->
     <string name="text_activity_main_notice">这是主界面</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
