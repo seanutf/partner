@@ -9,7 +9,8 @@ import android.view.ViewGroup;
 import com.sean.partner.R;
 
 /**
- * Created by zhangyi on 2017/11/24.
+ * Created by sean on 2017/11/24.
+ *
  */
 
 public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerViewHolder> {
