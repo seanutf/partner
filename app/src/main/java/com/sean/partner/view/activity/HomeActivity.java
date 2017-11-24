@@ -26,7 +26,7 @@ public class HomeActivity extends AppCompatActivity
     NavigationView navigationView;
     RecyclerView rvList;
 
-    private static final int NUM_RV_ITEM = 100;
+    private static final int NUM_RV_ITEM = 50;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_layout_home);
         initView();
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("首页");
 
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +64,7 @@ public class HomeActivity extends AppCompatActivity
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rvList.setLayoutManager(linearLayoutManager);
         rvList.setHasFixedSize(true);
-        HomeRecyclerViewAdapter adapter = new HomeRecyclerViewAdapter(NUM_RV_ITEM);
+        HomeRecyclerViewAdapter adapter = new HomeRecyclerViewAdapter(NUM_RV_ITEM,this);
         rvList.setAdapter(adapter);
 
 
