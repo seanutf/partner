@@ -18,7 +18,7 @@ public class HomeRecyclerViewHolder extends RecyclerView.ViewHolder {
 
     ImageView imgAvatar;
     TextView tvContent;
-    TextView tvLoc;
+    TextView tvLoc, tvIntroduction;
     ImageButton btnReview;
     ImageButton btnTogether;
     ImageButton btnShare;
@@ -28,6 +28,7 @@ public class HomeRecyclerViewHolder extends RecyclerView.ViewHolder {
         imgAvatar = (ImageView) itemView.findViewById(R.id.img_rv_home_item);
         tvContent = (TextView) itemView.findViewById(R.id.text_content_rv_home_item);
         tvLoc = (TextView) itemView.findViewById(R.id.text_loc_rv_home_item);
+        tvIntroduction = (TextView) itemView.findViewById(R.id.text_introduction_rv_home_item);
         btnReview = (ImageButton) itemView.findViewById(R.id.btn_review_rv_home_item);
         btnTogether = (ImageButton) itemView.findViewById(R.id.btn_together_rv_home_item);
         btnShare = (ImageButton) itemView.findViewById(R.id.btn_share_rv_home_item);

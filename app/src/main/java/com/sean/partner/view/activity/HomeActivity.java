@@ -3,6 +3,7 @@ package com.sean.partner.view.activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -24,6 +25,8 @@ public class HomeActivity extends AppCompatActivity
     DrawerLayout drawer;
     NavigationView navigationView;
     RecyclerView rvList;
+
+    private static final int NUM_RV_ITEM = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,13 @@ public class HomeActivity extends AppCompatActivity
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         rvList = (RecyclerView) findViewById(R.id.rv_home_list);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        rvList.setLayoutManager(linearLayoutManager);
+        rvList.setHasFixedSize(true);
+        HomeRecyclerViewAdapter adapter = new HomeRecyclerViewAdapter(NUM_RV_ITEM);
+        rvList.setAdapter(adapter);
+
+
     }
 
     @Override
