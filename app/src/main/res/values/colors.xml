@@ -11,6 +11,11 @@
     <color name="text_b">#ff808080</color>
     <!-- 不可操作文字 -->
     <color name="text_c">#ffBCBCBC</color>
+    <!-- 背景浅浅灰 -->
+    <color name="bg_gery">#eeeeee</color>
+
+    <!-- 背景亮蓝 -->
+    <color name="bg_blue">#45aadb</color>
     <!-- 链接文字 -->
     <color name="text_d">#ff3498DB</color>
     <!-- 警告 突出 -->

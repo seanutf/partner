@@ -39,8 +39,8 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
             if(holder != null){
                         Glide.with(activity).load(ImageResourcesURL.getImgURLs()[position])
                         .into(holder.imgAvatar);
-                        holder.tvIntroduction.setText("个人简介：热情开朗大方，年芳二八，肤白貌美，能担水，会砍柴，力拔山兮气盖世");
-                        holder.tvContent.setText("【安河桥北宽窄巷】12：32，一起看电影《给我来俩带血大腰子2》，我会戴个鸭舌帽和六边形墨镜，右手带一白手套");
+                        holder.tvIntroduction.setText("个人简介：热情开朗大方，年芳二八，肤白貌美，能担水，会砍柴，力拔山兮气盖世，喜欢唱歌，YY烈火公会18657");
+                        holder.tvContent.setText("【安河桥北宽窄巷】12：32，一起看电影《给我来俩带血大腰子2》，我会戴个鸭舌帽和六边形墨镜，右手戴白手套，左手拿灭火器");
                         holder.tvLoc.setText("离你有5.5公里");
 
             }
