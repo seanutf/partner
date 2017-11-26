@@ -7,6 +7,11 @@ package com.sean.partner.utils;
 public class StringUtils {
 
 
+    //判断字符串是否不为空
+    public static boolean isNotBlank(String value) {
+        return value != null && !value.trim().equals("");
+    }
+
     // 完整的判断中文汉字和符号
     public static boolean isChinese(String strName) {
         char[] ch = strName.toCharArray();

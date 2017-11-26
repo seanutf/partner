@@ -16,6 +16,11 @@
     <!-- 允许读取手机状态 用于创建BmobInstallation -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
     <application
         android:name=".PartnerApplication"
         android:allowBackup="true"
@@ -44,6 +49,12 @@
             android:name=".view.activity.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".view.activity.CreateDateActivity">
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login">
         </activity>
     </application>
 
