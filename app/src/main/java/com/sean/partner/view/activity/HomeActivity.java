@@ -2,6 +2,7 @@ package com.sean.partner.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,10 +20,12 @@ import android.view.MenuItem;
 import com.sean.partner.R;
 import com.sean.partner.meta.PUser;
 
-import java.io.Serializable;
+
 
 public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, HomeContract.View {
+
+    private HomeContract.Presenter mPresenter;
 
     Toolbar toolbar;
     FloatingActionButton fab;
@@ -40,19 +43,18 @@ public class HomeActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("首页");
 
+        mPresenter = new HomePresenter(this);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 PUser user = null;
                 if(user != null){
-                    startActivity(new Intent(HomeActivity.this, CreateDateActivity.class));
+                    mPresenter.createDate();
                 }else{
-                    startActivity(new Intent(HomeActivity.this, UserUnLoginActivity.class));
+                    mPresenter.userLogin();
                 }
-
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
             }
         });
 
@@ -63,7 +65,20 @@ public class HomeActivity extends AppCompatActivity
         toggle.syncState();
 
 
+
+
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mPresenter.start();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        mPresenter.result(requestCode, resultCode);
     }
 
     private void initView() {
@@ -136,5 +151,23 @@ public class HomeActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void setPresenter(@NonNull HomeContract.Presenter presenter) {
+
+        if(presenter != null){
+            mPresenter = presenter;
+        }
+    }
+
+    @Override
+    public void showCreateDate() {
+        startActivity(new Intent(HomeActivity.this, CreateDateActivity.class));
+    }
+
+    @Override
+    public void showLogin() {
+        startActivity(new Intent(HomeActivity.this, UserUnLoginActivity.class));
     }
 }
