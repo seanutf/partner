@@ -1,12 +1,8 @@
 package com.sean.partner.view.activity;
 
-import android.support.annotation.NonNull;
 
 import com.sean.partner.BasePresenter;
 import com.sean.partner.BaseView;
-import com.sean.partner.meta.DateMeta;
-
-import java.util.List;
 
 /**
  * Created by sean on 2017/11/28.

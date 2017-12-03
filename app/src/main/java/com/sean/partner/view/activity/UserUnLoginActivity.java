@@ -5,11 +5,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 
 import com.sean.partner.R;
 import com.sean.partner.view.fragment.UserLoginFragment;
@@ -23,9 +21,11 @@ import cn.bmob.v3.BmobUser;
 
 /**
  * Created by sean on 2017/1/7.
+ *
+ *
  */
 
-public class UserUnLoginActivity extends AppCompatActivity implements UserRegisterFragment.RegisterUserDataListener{
+public class UserUnLoginActivity extends MainActivity implements UserRegisterFragment.RegisterUserDataListener{
 
 
     public ViewPager viewPager;

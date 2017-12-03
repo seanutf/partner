@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 /**
  * Created by sean on 2016/9/14.
+ *
  */
 public class UnderlineDevider extends View {
 

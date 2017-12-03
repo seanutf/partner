@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 /**
  * Created by sean on 2016/9/13.
+ *
  */
 public class UserGuideFragment  extends Fragment {
 

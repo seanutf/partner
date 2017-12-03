@@ -22,6 +22,7 @@ import static com.sean.partner.view.activity.UserUnLoginActivity.USER_REGISTER_D
 
 /**
  * Created by sean on 2017/2/19.
+ *
  */
 
 public class UserRegisterConfirmFragment extends Fragment{

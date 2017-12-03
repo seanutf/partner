@@ -10,6 +10,7 @@ import com.sean.partner.R;
 
 /**
  * Created by sean on 2016/9/14.
+ *
  */
 public class CatchScrollLayout  extends LinearLayout {
 
