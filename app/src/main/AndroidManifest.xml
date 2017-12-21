@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.sean.partner">
+          package="com.sean.partner"
+          xmlns:tools="http://schemas.android.com/tools">
 
     <!-- 以下权限Bmob后端云服务平台所需 -->
     <!-- 允许联网 -->
@@ -25,8 +26,8 @@
         android:name=".PartnerApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_as"
-        android:roundIcon="@mipmap/ic_launcher_as_round"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_as_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".view.activity.SplashActivity">
@@ -49,6 +50,7 @@
         <activity
             android:name=".view.activity.HomeActivity"
             android:label="@string/title_activity_home"
+            android:launchMode="singleTask"
             android:theme="@style/AppTheme">
         </activity>
         <activity android:name=".view.activity.CreateDateActivity">
@@ -56,6 +58,10 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login">
+        </activity>
+        <activity
+            android:name=".view.activity.Main2Activity"
+            android:label="@string/title_activity_main2">
         </activity>
     </application>
 

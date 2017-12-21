@@ -2,10 +2,17 @@ package com.sean.partner.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.StringRes;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,7 +24,11 @@ import android.view.MenuItem;
 
 import com.sean.partner.R;
 import com.sean.partner.meta.PUser;
+import com.sean.partner.view.fragment.HomeFragment;
+import com.sean.partner.view.fragment.HomePagerFragment;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class HomeActivity extends MainActivity
@@ -29,9 +40,36 @@ public class HomeActivity extends MainActivity
     FloatingActionButton fab;
     DrawerLayout drawer;
     NavigationView navigationView;
-    RecyclerView rvList;
+    BottomNavigationView bottomNavigationView;
+    FragmentManager manager;
+    //RecyclerView rvList;
 
-    private static final int NUM_RV_ITEM = 50;
+
+
+    public  static final int NUM_RV_ITEM = 50;
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    //todo 显示首页fragment并刷新
+                    return true;
+                case R.id.navigation_dashboard:
+                    //mTextMessage.setText(R.string.title_dashboard);
+                    return true;
+                case R.id.navigation_group:
+                    //mTextMessage.setText(R.string.title_dashboard);
+                    return true;
+                case R.id.navigation_notifications:
+                    //mTextMessage.setText(R.string.title_notifications);
+                    return true;
+            }
+            return false;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,11 +99,15 @@ public class HomeActivity extends MainActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
-
-
-
+        manager = getSupportFragmentManager();
         navigationView.setNavigationItemSelectedListener(this);
+        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.root_view_fragment, HomeFragment.newInstance());
+        transaction.commit();
+
     }
 
     @Override
@@ -84,14 +126,7 @@ public class HomeActivity extends MainActivity
         fab = (FloatingActionButton) findViewById(R.id.fab);
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
-        rvList = (RecyclerView) findViewById(R.id.rv_home_list);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        rvList.setLayoutManager(linearLayoutManager);
-        rvList.setHasFixedSize(true);
-        HomeRecyclerViewAdapter adapter = new HomeRecyclerViewAdapter(NUM_RV_ITEM,this);
-        rvList.setAdapter(adapter);
-
-
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
     }
 
     @Override
@@ -168,4 +203,5 @@ public class HomeActivity extends MainActivity
     public void showLogin() {
         startActivity(new Intent(HomeActivity.this, UserUnLoginActivity.class));
     }
+
 }

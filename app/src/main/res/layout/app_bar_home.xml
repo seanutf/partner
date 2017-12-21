@@ -22,13 +22,40 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_home"/>
+    <!--<FrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/root_view_fragment"-->
+        <!--android:layout_marginBottom="45dp">-->
+        <!--&lt;!&ndash;<fragment&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/fragment2"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:name="com.sean.partner.view.fragment.HomeFragment"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"/>&ndash;&gt;-->
+    <!--</FrameLayout>-->
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="15dp"
         app:srcCompat="@mipmap/ic_add_white_24dp"/>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/navigation"/>
+
+
+
+
+
 
 </android.support.design.widget.CoordinatorLayout>

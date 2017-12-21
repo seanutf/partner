@@ -19,6 +19,13 @@
     <!--主页面-->
     <string name="text_activity_main_notice">这是主界面</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="text_test_1_activity_home">个人简介：热情开朗大方，年芳二八，肤白貌美，能担水，会砍柴，力拔山兮气盖世，喜欢唱歌，YY烈火公会18657</string>
+    <string name="text_test_2_activity_home">【安河桥北宽窄巷】12：32，一起看电影《给我来俩带血大腰子2》，我会戴个鸭舌帽和六边形墨镜，右手戴白手套，左手拿灭火器</string>
+    <string name="text_test_3_activity_home">离你有5.5公里</string>
+    <string name="title_tab_recommend">推荐</string>
+    <string name="title_tab_friend">好友</string>
+    <string name="title_tab_new">最新</string>
+    <string name="title_tab_near">最近</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -39,4 +46,9 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">首页</string>
+    <string name="title_dashboard">活动</string>
+    <string name="title_group">社群</string>
+    <string name="title_notifications">消息</string>
 </resources>
