@@ -1,27 +1,17 @@
 package com.sean.partner.view.fragment;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
-import android.support.annotation.StringRes;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.sean.partner.R;
 import com.sean.partner.view.activity.HomeRecyclerViewAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.sean.partner.view.activity.HomeActivity.NUM_RV_ITEM;
 
@@ -35,21 +25,10 @@ public class HomePagerFragment extends Fragment {
 
     @LayoutRes
     int layoutRes;
-    //TabLayout tabLayout;
-    //ViewPager pager;
     FragmentActivity activity;
 
 
     private static final String LAYOUT_RES = "layoutRes_home";
-
-//    List<PageModel> pageModels = new ArrayList<>();
-//
-//    {
-//        pageModels.add(new PageModel(R.string.title_tab_recommend, R.layout.layout_content_home_recommend));
-//        pageModels.add(new PageModel(R.string.title_tab_friend, R.layout.layout_content_home_recommend));
-//        pageModels.add(new PageModel(R.string.title_tab_new, R.layout.layout_content_home_recommend));
-//        pageModels.add(new PageModel(R.string.title_tab_near, R.layout.layout_content_home_recommend));
-//    }
 
 
 
@@ -84,16 +63,4 @@ public class HomePagerFragment extends Fragment {
             activity = getActivity();
         }
     }
-
-//    private class PageModel {
-//        @LayoutRes
-//        int layoutRes;
-//        @StringRes
-//        int titleRes;
-//
-//        PageModel(@StringRes int titleRes, @LayoutRes int layoutRes) {
-//            this.layoutRes = layoutRes;
-//            this.titleRes = titleRes;
-//        }
-//    }
 }

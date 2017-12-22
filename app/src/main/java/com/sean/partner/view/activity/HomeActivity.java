@@ -2,17 +2,11 @@ package com.sean.partner.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,10 +19,7 @@ import android.view.MenuItem;
 import com.sean.partner.R;
 import com.sean.partner.meta.PUser;
 import com.sean.partner.view.fragment.HomeFragment;
-import com.sean.partner.view.fragment.HomePagerFragment;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.sean.partner.view.utils.BottomNavigationViewHelper;
 
 
 public class HomeActivity extends MainActivity
@@ -127,6 +118,7 @@ public class HomeActivity extends MainActivity
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
     }
 
     @Override
