@@ -34,7 +34,7 @@
 
     </LinearLayout>
 
-    <com.sean.partner.view.custom.UnderlineDevider
+    <com.sean.partner.utils.view.custom.UnderlineDevider
         android:id="@+id/underline_v"
         android:layout_width="match_parent"
         android:layout_height="2dp"

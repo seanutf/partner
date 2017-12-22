@@ -1,4 +1,4 @@
-package com.sean.partner.view.activity;
+package com.sean.partner.main.home;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

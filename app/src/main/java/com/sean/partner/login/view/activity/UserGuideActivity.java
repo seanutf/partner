@@ -1,4 +1,4 @@
-package com.sean.partner.view.activity;
+package com.sean.partner.login.view.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -19,15 +19,17 @@ import android.widget.LinearLayout;
 import com.nineoldandroids.view.ViewHelper;
 import com.sean.partner.PartnerApplication;
 import com.sean.partner.R;
+import com.sean.partner.main.home.view.activity.HomeActivity;
 import com.sean.partner.utils.UserConfigures;
-import com.sean.partner.view.fragment.UserGuideFragment;
+import com.sean.partner.MainActivity;
+import com.sean.partner.login.view.fragment.UserGuideFragment;
 
 /**
  * Created by sean on 2016/9/12.
  *
  *
  */
-public class UserGuideActivity extends MainActivity{
+public class UserGuideActivity extends MainActivity {
 
     static final int NUM_PAGES = 4;
 

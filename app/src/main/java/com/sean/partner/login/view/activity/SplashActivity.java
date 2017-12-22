@@ -1,4 +1,4 @@
-package com.sean.partner.view.activity;
+package com.sean.partner.login.view.activity;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -8,6 +8,7 @@ import android.view.WindowManager;
 
 import com.sean.partner.PartnerApplication;
 import com.sean.partner.R;
+import com.sean.partner.main.home.view.activity.HomeActivity;
 import com.sean.partner.utils.UserConfigures;
 
 import cn.bmob.v3.Bmob;

@@ -1,4 +1,4 @@
-package com.sean.partner.view.activity;
+package com.sean.partner.create.view.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

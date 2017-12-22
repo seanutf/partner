@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sean.partner.view.activity.HomeActivity">
+    tools:context="com.sean.partner.main.home.view.activity.HomeActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -22,17 +22,6 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_home"/>
-    <!--<FrameLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:id="@+id/root_view_fragment"-->
-        <!--android:layout_marginBottom="45dp">-->
-        <!--&lt;!&ndash;<fragment&ndash;&gt;-->
-            <!--&lt;!&ndash;android:id="@+id/fragment2"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:name="com.sean.partner.view.fragment.HomeFragment"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_height="wrap_content"/>&ndash;&gt;-->
-    <!--</FrameLayout>-->
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -41,6 +30,7 @@
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="70dp"
         android:layout_marginRight="15dp"
+        app:layout_behavior=""
         app:srcCompat="@mipmap/ic_add_white_24dp"/>
 
     <android.support.design.widget.BottomNavigationView

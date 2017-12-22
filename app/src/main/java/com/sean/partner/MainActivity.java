@@ -1,4 +1,4 @@
-package com.sean.partner.view.activity;
+package com.sean.partner;
 
 import android.content.Intent;
 import android.os.Bundle;

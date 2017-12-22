@@ -1,4 +1,4 @@
-package com.sean.partner.view.custom;
+package com.sean.partner.utils.view.custom;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

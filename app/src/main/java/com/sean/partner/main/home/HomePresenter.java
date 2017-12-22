@@ -1,6 +1,8 @@
-package com.sean.partner.view.activity;
+package com.sean.partner.main.home;
 
 import android.support.annotation.NonNull;
+
+import com.sean.partner.main.home.HomeContract;
 
 /**
  * Created by sean on 2017/11/28.

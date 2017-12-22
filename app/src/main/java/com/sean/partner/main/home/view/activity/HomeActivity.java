@@ -1,4 +1,4 @@
-package com.sean.partner.view.activity;
+package com.sean.partner.main.home.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,9 +17,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.sean.partner.R;
+import com.sean.partner.main.home.HomeContract;
+import com.sean.partner.main.home.HomePresenter;
 import com.sean.partner.meta.PUser;
-import com.sean.partner.view.fragment.HomeFragment;
-import com.sean.partner.view.utils.BottomNavigationViewHelper;
+import com.sean.partner.create.view.activity.CreateDateActivity;
+import com.sean.partner.MainActivity;
+import com.sean.partner.login.view.activity.UserUnLoginActivity;
+import com.sean.partner.main.home.view.fragment.HomeFragment;
+import com.sean.partner.utils.view.BottomNavigationViewHelper;
 
 
 public class HomeActivity extends MainActivity

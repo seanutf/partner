@@ -1,11 +1,11 @@
-package com.sean.partner.view.activity;
+package com.sean.partner.login.view.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.sean.partner.R;
-import com.sean.partner.view.custom.CatchScrollLayout;
-import com.sean.partner.view.custom.SignUpContainer;
+import com.sean.partner.utils.view.custom.CatchScrollLayout;
+import com.sean.partner.utils.view.custom.SignUpContainer;
 
 /**
  * Created by sean on 2016/9/14.

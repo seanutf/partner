@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ff3e52b0"
-    tools:context="com.sean.partner.view.activity.UserLoginActivity"
+    tools:context="com.sean.partner.login.view.activity.UserLoginActivity"
     android:paddingTop="10dp">
 
-    <com.sean.partner.view.custom.CatchScrollLayout
+    <com.sean.partner.utils.view.custom.CatchScrollLayout
         android:id="@+id/catch_sroll_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,12 +16,12 @@
         android:orientation="vertical"
         android:clickable="true">
 
-        <com.sean.partner.view.custom.SignUpContainer
+        <com.sean.partner.utils.view.custom.SignUpContainer
             android:id="@+id/sign_up_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-    </com.sean.partner.view.custom.CatchScrollLayout>
+    </com.sean.partner.utils.view.custom.CatchScrollLayout>
 
 
 

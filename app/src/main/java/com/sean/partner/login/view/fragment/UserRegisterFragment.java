@@ -1,4 +1,4 @@
-package com.sean.partner.view.fragment;
+package com.sean.partner.login.view.fragment;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.text.TextUtilsCompat;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.sean.partner.R;
-import com.sean.partner.view.activity.UserUnLoginActivity;
+import com.sean.partner.login.view.activity.UserUnLoginActivity;
 
 import cn.bmob.v3.BmobUser;
 

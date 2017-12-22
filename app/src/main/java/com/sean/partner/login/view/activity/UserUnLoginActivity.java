@@ -1,4 +1,4 @@
-package com.sean.partner.view.activity;
+package com.sean.partner.login.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,9 +10,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 
 import com.sean.partner.R;
-import com.sean.partner.view.fragment.UserLoginFragment;
-import com.sean.partner.view.fragment.UserRegisterConfirmFragment;
-import com.sean.partner.view.fragment.UserRegisterFragment;
+import com.sean.partner.main.home.view.activity.HomeActivity;
+import com.sean.partner.MainActivity;
+import com.sean.partner.login.view.fragment.UserLoginFragment;
+import com.sean.partner.login.view.fragment.UserRegisterConfirmFragment;
+import com.sean.partner.login.view.fragment.UserRegisterFragment;
 
 import java.util.ArrayList;
 

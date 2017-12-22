@@ -1,4 +1,4 @@
-package com.sean.partner.view.activity;
+package com.sean.partner.main.home;
 
 
 import com.sean.partner.BasePresenter;

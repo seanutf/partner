@@ -1,4 +1,4 @@
-package com.sean.partner.view.fragment;
+package com.sean.partner.login.view.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

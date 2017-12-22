@@ -1,4 +1,4 @@
-package com.sean.partner.view.utils;
+package com.sean.partner.utils.view;
 
 import android.annotation.SuppressLint;
 import android.support.design.internal.BottomNavigationItemView;

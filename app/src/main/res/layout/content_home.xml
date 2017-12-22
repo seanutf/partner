@@ -9,29 +9,7 @@
     android:id="@+id/root_view_fragment"
     android:layout_marginBottom="45dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.sean.partner.view.activity.HomeActivity"
+    tools:context="com.sean.partner.main.home.view.activity.HomeActivity"
     tools:showIn="@layout/app_bar_home">
-
-    <!--<android.support.design.widget.TabLayout-->
-        <!--android:id="@+id/tl_home"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="48dp"-->
-        <!--android:background="@android:color/white"-->
-        <!--app:tabMode="scrollable"-->
-        <!--app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"/>-->
-
-    <!--<android.support.v4.view.ViewPager-->
-        <!--android:id="@+id/vp_home"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_marginBottom="0dp"-->
-        <!--android:layout_marginEnd="0dp"-->
-        <!--android:layout_marginStart="0dp"-->
-        <!--android:layout_marginTop="0dp"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/tl_home"-->
-        <!--app:layout_constraintVertical_bias="1.0"/>-->
 
 </LinearLayout>

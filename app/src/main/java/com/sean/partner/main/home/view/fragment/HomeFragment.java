@@ -1,4 +1,4 @@
-package com.sean.partner.view.fragment;
+package com.sean.partner.main.home.view.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -17,12 +17,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sean.partner.R;
-import com.sean.partner.view.activity.HomeRecyclerViewAdapter;
+import com.sean.partner.main.home.HomeRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.sean.partner.view.activity.HomeActivity.NUM_RV_ITEM;
+import static com.sean.partner.main.home.view.activity.HomeActivity.NUM_RV_ITEM;
 
 /**
  * Created by sean on 2017/12/21.

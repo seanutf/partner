@@ -1,4 +1,4 @@
-package com.sean.partner.view.custom;
+package com.sean.partner.utils.view.custom;
 
 import android.content.Context;
 import android.util.AttributeSet;
