@@ -8,7 +8,7 @@ import android.view.WindowManager;
 
 import com.sean.partner.PartnerApplication;
 import com.sean.partner.R;
-import com.sean.partner.main.home.view.activity.HomeActivity;
+import com.sean.partner.main.HomeActivity;
 import com.sean.partner.utils.UserConfigures;
 
 import cn.bmob.v3.Bmob;

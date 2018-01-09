@@ -10,7 +10,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 
 import com.sean.partner.R;
-import com.sean.partner.main.home.view.activity.HomeActivity;
+import com.sean.partner.main.HomeActivity;
 import com.sean.partner.MainActivity;
 import com.sean.partner.login.view.fragment.UserLoginFragment;
 import com.sean.partner.login.view.fragment.UserRegisterConfirmFragment;

@@ -48,7 +48,7 @@
             android:windowSoftInputMode="adjustUnspecified|stateHidden">
         </activity>
         <activity
-            android:name=".main.home.view.activity.HomeActivity"
+            android:name=".main.HomeActivity"
             android:label="@string/title_activity_home"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme"

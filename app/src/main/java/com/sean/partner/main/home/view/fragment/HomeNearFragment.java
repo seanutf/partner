@@ -2,14 +2,11 @@ package com.sean.partner.main.home.view.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.LruCache;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,21 +19,19 @@ import com.sean.partner.main.home.HomeRecyclerViewAdapter;
 import static com.sean.partner.main.HomeActivity.NUM_RV_ITEM;
 
 /**
- * Created by sean on 2017/12/21.
- *
- * 主页面fragment
+ * Created by sean on 2017/12/25.
  */
 
-public class HomePagerFragment extends HomeParentFragment{
+public class HomeNearFragment  extends HomeParentFragment {
 
     FragmentActivity activity;
     HomeContract.HomePresenter mPresenter;
 
-    public static final String TAG = "HomePagerFragment";
+    public static final String TAG = "HomeNearFragment";
 
-    public static HomePagerFragment newInstance() {
+    public static HomeNearFragment newInstance() {
         //mPresenter = mPresenter;
-        return new HomePagerFragment();
+        return new HomeNearFragment();
     }
 
     @Nullable

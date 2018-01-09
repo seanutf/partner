@@ -1,13 +1,10 @@
-package com.sean.partner.main.home.view.activity;
+package com.sean.partner.main;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,28 +14,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.sean.partner.R;
-import com.sean.partner.main.home.HomeContract;
-import com.sean.partner.main.home.HomePresenter;
-import com.sean.partner.meta.PUser;
-import com.sean.partner.create.view.activity.CreateDateActivity;
 import com.sean.partner.MainActivity;
-import com.sean.partner.login.view.activity.UserUnLoginActivity;
+import com.sean.partner.main.home.HomeContract;
+import com.sean.partner.main.home.HomeModelPresenter;
 import com.sean.partner.main.home.view.fragment.HomeFragment;
 import com.sean.partner.utils.view.BottomNavigationViewHelper;
 
 
 public class HomeActivity extends MainActivity
-        implements NavigationView.OnNavigationItemSelectedListener, HomeContract.View {
-
-    private HomeContract.Presenter mPresenter;
+        implements NavigationView.OnNavigationItemSelectedListener{
 
     Toolbar toolbar;
-    FloatingActionButton fab;
+
     DrawerLayout drawer;
     NavigationView navigationView;
     BottomNavigationView bottomNavigationView;
     FragmentManager manager;
     //RecyclerView rvList;
+    HomeContract.HomePresenter mPresenter;
 
 
 
@@ -75,21 +68,7 @@ public class HomeActivity extends MainActivity
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("首页");
 
-        mPresenter = new HomePresenter(this);
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                PUser user = null;
-                if(user != null){
-                    mPresenter.createDate();
-                }else{
-                    mPresenter.userLogin();
-                }
-            }
-        });
-
+        HomeFragment homeFragment = HomeFragment.newInstance();
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -101,25 +80,15 @@ public class HomeActivity extends MainActivity
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
 
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.root_view_fragment, HomeFragment.newInstance());
+        transaction.replace(R.id.root_view_fragment, homeFragment,HomeFragment.TAG);
         transaction.commit();
+        mPresenter = new HomeModelPresenter(homeFragment);
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mPresenter.start();
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        mPresenter.result(requestCode, resultCode);
-    }
 
     private void initView() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        fab = (FloatingActionButton) findViewById(R.id.fab);
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
@@ -183,22 +152,7 @@ public class HomeActivity extends MainActivity
         return true;
     }
 
-    @Override
-    public void setPresenter(@NonNull HomeContract.Presenter presenter) {
-
-        if(presenter != null){
-            mPresenter = presenter;
-        }
+    public HomeContract.HomePresenter getPresenter(){
+        return mPresenter;
     }
-
-    @Override
-    public void showCreateDate() {
-        startActivity(new Intent(HomeActivity.this, CreateDateActivity.class));
-    }
-
-    @Override
-    public void showLogin() {
-        startActivity(new Intent(HomeActivity.this, UserUnLoginActivity.class));
-    }
-
 }

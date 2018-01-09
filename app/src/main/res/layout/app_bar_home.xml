@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sean.partner.main.home.view.activity.HomeActivity">
+    tools:context="com.sean.partner.main.HomeActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -23,20 +23,10 @@
 
     <include layout="@layout/content_home"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="70dp"
-        android:layout_marginRight="15dp"
-        app:layout_behavior=""
-        app:srcCompat="@mipmap/ic_add_white_24dp"/>
-
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="@dimen/bottom_navigation_view_height"
         android:layout_marginEnd="0dp"
         android:layout_marginStart="0dp"
         android:layout_gravity="bottom"

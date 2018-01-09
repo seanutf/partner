@@ -11,67 +11,54 @@ import com.sean.partner.BaseView;
 
 public interface HomeContract {
 
-    interface View extends BaseView<Presenter> {
 
-        //void setLoadingIndicator(boolean active);
+    /**
+     * 用于处理 HomePagerFragment和HomeFragment之间显示逻辑
+     */
+    interface HomeView extends BaseView<HomePresenter> {
 
-        //void showTasks(List<DateMeta> tasks);
-
-        //void showAddTask();
+        void hideView();
 
         void showCreateDate();
 
         void showLogin();
 
-        //void showTaskDetailsUi(String taskId);
-
-        //void showTaskMarkedComplete();
-
-        //void showTaskMarkedActive();
-
-        //void showCompletedTasksCleared();
-
-        //void showLoadingTasksError();
-
-        //void showNoTasks();
-
-        //void showActiveFilterLabel();
-
-        //void showCompletedFilterLabel();
-
-        //void showAllFilterLabel();
-
-        //void showNoActiveTasks();
-
-        //void showNoCompletedTasks();
-
-        //void showSuccessfullySavedMessage();
-
-        //boolean isActive();
-
-        //void showFilteringPopUpMenu();
+        void showActivityDetail();
     }
 
-    interface Presenter extends BasePresenter {
+    /**
+     * 用于处理 HomePagerFragment自己内部显示逻辑
+     */
+    interface PageView extends BaseView<HomePresenter> {
+
+        void showActivityDetail();
+    }
+
+    /**
+     * 用于处理 HomePagerFragment和HomeFragment之间交互逻辑
+     */
+    interface HomePresenter extends BasePresenter {
 
         void result(int requestCode, int resultCode);
 
-        //void loadTasks(boolean forceUpdate);
-
-        //void addNewTask();
 
         void createDate();
 
         void userLogin();
 
-        //void openTaskDetails(@NonNull DateMeta requestedTask);
 
-        //void completeTask(@NonNull DateMeta completedTask);
+        void clickItem();
 
-        //void activateTask(@NonNull DateMeta activeTask);
-
-        //void clearCompletedTasks();
-
-        //void setFiltering(int requestType);
+        void listSliding();
     }
+
+
+
+//    /**
+//     * 用于处理 HomePagerFragment自己内部交互逻辑
+//     */
+//
+//    interface PagePresenter extends BasePresenter {
+//
+//    }
 }

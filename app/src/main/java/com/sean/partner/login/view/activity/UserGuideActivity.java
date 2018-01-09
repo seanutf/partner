@@ -19,7 +19,7 @@ import android.widget.LinearLayout;
 import com.nineoldandroids.view.ViewHelper;
 import com.sean.partner.PartnerApplication;
 import com.sean.partner.R;
-import com.sean.partner.main.home.view.activity.HomeActivity;
+import com.sean.partner.main.HomeActivity;
 import com.sean.partner.utils.UserConfigures;
 import com.sean.partner.MainActivity;
 import com.sean.partner.login.view.fragment.UserGuideFragment;
