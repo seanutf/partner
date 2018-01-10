@@ -12,7 +12,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -129,7 +128,7 @@ public class HomeFragment extends HomeParentFragment {
                     case 1:
                         fragment = mFragments[1];
                         if (fragment == null) {
-                            fragment = new HomeFriendFragment();
+                            fragment = HomeFriendFragment.newInstance();
                             transaction.add(container.getId(), fragment, HomeFriendFragment.TAG);
                             mFragments[1] = fragment;
                             if (transaction != null) {
@@ -142,7 +141,7 @@ public class HomeFragment extends HomeParentFragment {
                     case 2:
                         fragment = mFragments[2];
                         if (fragment == null) {
-                            fragment = new HomeNewFragment();
+                            fragment = HomeNewFragment.newInstance();
                             transaction.add(container.getId(), fragment, HomeNewFragment.TAG);
                             mFragments[2] = fragment;
                             if (transaction != null) {
@@ -155,7 +154,7 @@ public class HomeFragment extends HomeParentFragment {
                     case 3:
                         fragment = mFragments[3];
                         if (fragment == null) {
-                            fragment = new HomeNearFragment();
+                            fragment = HomeNearFragment.newInstance();
                             transaction.add(container.getId(), fragment, HomeNearFragment.TAG);
                             mFragments[3] = fragment;
                             if (transaction != null) {

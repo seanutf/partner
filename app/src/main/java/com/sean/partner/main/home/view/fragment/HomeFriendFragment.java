@@ -3,7 +3,6 @@ package com.sean.partner.main.home.view.fragment;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,7 +12,6 @@ import android.view.ViewGroup;
 
 import com.sean.partner.main.HomeActivity;
 import com.sean.partner.main.home.HomeContract;
-import com.sean.partner.main.home.HomeModelPresenter;
 import com.sean.partner.main.home.HomeRecyclerViewAdapter;
 
 import static com.sean.partner.main.HomeActivity.NUM_RV_ITEM;
