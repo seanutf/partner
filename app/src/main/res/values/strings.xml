@@ -26,6 +26,7 @@
     <string name="title_tab_friend">好友</string>
     <string name="title_tab_new">最新</string>
     <string name="title_tab_near">最近</string>
+    <string name="title_tool_bar_for_home_fragment">首页</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

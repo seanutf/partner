@@ -24,14 +24,14 @@ import com.sean.partner.utils.view.BottomNavigationViewHelper;
 public class HomeActivity extends MainActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
-    Toolbar toolbar;
+
 
     DrawerLayout drawer;
     NavigationView navigationView;
     BottomNavigationView bottomNavigationView;
     FragmentManager manager;
-    //RecyclerView rvList;
     HomeContract.HomePresenter mPresenter;
+    HomeFragment homeFragment;
 
 
 
@@ -65,30 +65,34 @@ public class HomeActivity extends MainActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layout_home);
         initView();
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("首页");
 
-        HomeFragment homeFragment = HomeFragment.newInstance();
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+        homeFragment = HomeFragment.newInstance();
         manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.root_view_fragment, homeFragment,HomeFragment.TAG);
+        transaction.commit();
+
+
+
         navigationView.setNavigationItemSelectedListener(this);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
 
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.root_view_fragment, homeFragment,HomeFragment.TAG);
-        transaction.commit();
+
         mPresenter = new HomeModelPresenter(homeFragment);
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, homeFragment.getToolBar(), R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+    }
 
     private void initView() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
@@ -105,27 +109,9 @@ public class HomeActivity extends MainActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_search) {
-            return true;
-        }
 
-        return super.onOptionsItemSelected(item);
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override

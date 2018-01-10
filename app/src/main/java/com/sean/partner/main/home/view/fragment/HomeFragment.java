@@ -12,10 +12,16 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.sean.partner.MainActivity;
 import com.sean.partner.R;
 import com.sean.partner.create.view.activity.CreateDateActivity;
 import com.sean.partner.login.view.activity.UserUnLoginActivity;
@@ -34,9 +40,10 @@ import java.util.List;
 public class HomeFragment extends HomeParentFragment {
 
 
-    public static final String TAG = "HomeFragment";
+    public static final String TAG = HomeFragment.class.getSimpleName();
 
     TabLayout tabLayout;
+    Toolbar toolbar;
     ViewPager pager;
     FloatingActionButton fab;
     FragmentActivity activity;
@@ -59,6 +66,9 @@ public class HomeFragment extends HomeParentFragment {
         pager = (ViewPager) rootView.findViewById(R.id.vp_home);
         fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
         tabLayout.setupWithViewPager(pager);
+        toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
+        ((MainActivity)activity).setSupportActionBar(toolbar);
+        ((MainActivity)activity).getSupportActionBar().setTitle(getString(R.string.title_tool_bar_for_home_fragment));
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -78,41 +88,6 @@ public class HomeFragment extends HomeParentFragment {
             @Override
             public Fragment getItem(int position) {
                 return mFragments[position];
-//                switch (position){
-//                    case 0:
-//                        HomePagerFragment pagerFragment = HomePagerFragment.newInstance();
-//                        FragmentTransaction tpf = getChildFragmentManager().beginTransaction();
-//                        tpf.add(pagerFragment, HomePagerFragment.TAG);
-//                        tpf.commitNow();
-//                        return pagerFragment;
-//                    case 1:
-//                        HomeFriendFragment friendFragment = HomeFriendFragment.newInstance();
-//                        FragmentTransaction tff = getChildFragmentManager().beginTransaction();
-//                        tff.add(friendFragment, HomeFriendFragment.TAG);
-//                        tff.commit();
-//                        return friendFragment;
-//                    case 2:
-//                        HomeNewFragment newFragment = HomeNewFragment.newInstance();
-//                        FragmentTransaction tnf = getChildFragmentManager().beginTransaction();
-//                        tnf.add(newFragment, HomeNewFragment.TAG);
-//                        tnf.commit();
-//                        return newFragment;
-//                    case 3:
-//                        HomeNearFragment nearFragment = HomeNearFragment.newInstance();
-//                        FragmentTransaction tnff = getChildFragmentManager().beginTransaction();
-//                        tnff.add(nearFragment, HomeNearFragment.TAG);
-//                        tnff.commit();
-//                        return nearFragment;
-//                }
-//                if(getFragments()[position] != null){
-//                    return getFragments()[position];
-//                }
-//                HomePagerFragment pagerFragment = HomePagerFragment.newInstance();
-//                FragmentTransaction tpf = getChildFragmentManager().beginTransaction();
-//                tpf.add(pagerFragment, HomePagerFragment.TAG);
-//                tpf.commitNow();
-//                return pagerFragment;
-                //return HomePagerFragment.newInstance();
             }
 
             @Override
@@ -231,8 +206,7 @@ public class HomeFragment extends HomeParentFragment {
         if(getActivity() != null){
             activity = getActivity();
         }
-
-        setChildFragment();
+        setHasOptionsMenu(true);
         mFragments = new Fragment[4];
 
         pageModels.add(new PageModel(R.string.title_tab_recommend, R.layout.layout_content_home_recommend));
@@ -243,17 +217,11 @@ public class HomeFragment extends HomeParentFragment {
 
     }
 
-    private void setChildFragment() {
-
-    }
-
     private class PageModel {
         @LayoutRes
         int layoutRes;
         @StringRes
         int titleRes;
-
-        String tag;
 
         PageModel(@StringRes int titleRes, @LayoutRes int layoutRes) {
             this.layoutRes = layoutRes;
@@ -296,11 +264,28 @@ public class HomeFragment extends HomeParentFragment {
         //todo  fab的隐藏
     }
 
-    public HomeContract.HomePresenter getPresenter(){
-        return mPresenter;
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflate) {
+        inflate.inflate(R.menu.home, menu);
     }
 
-    public Fragment[] getFragments() {
-        return mFragments;
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id){
+            case R.id.action_search:
+                showSearchView();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void showSearchView() {
+
+    }
+
+    public Toolbar getToolBar(){
+        return toolbar;
     }
 }

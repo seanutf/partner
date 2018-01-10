@@ -57,7 +57,7 @@ public class HomeModelPresenter implements HomeContract.HomePresenter {
 
     @Override
     public void userLogin() {
-
+        mHomeView.showLogin();
     }
 
     @Override
