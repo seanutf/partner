@@ -48,7 +48,7 @@
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
         android:gravity="top|center_horizontal"
-        android:minHeight="@dimen/welcome_content_min_height"
+        android:minHeight="@dimen/length_size_96"
         android:textAppearance="@style/WelcomeContentAppearance" />
 
     <View
