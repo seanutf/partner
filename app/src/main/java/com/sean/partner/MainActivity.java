@@ -10,12 +10,51 @@ import android.support.v7.app.AppCompatActivity;
  *
  * 各个Activity界面的父类
  */
-public class MainActivity extends AppCompatActivity{
+public abstract class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setActivityContentView();
+        setView();
+        setData();
     }
+
+    /**
+     * 对页面中所使用的View进行初始化和设置
+     * */
+    private void setView() {
+        initActivityView();
+        setActivityView();
+    }
+
+    /**
+     * 获取页面所需数据，并进行设置
+     * */
+    public void setData(){
+        getIntentData();
+        loadActivityData();
+        setActivityData();
+    }
+
+    public abstract void setActivityData();
+
+    public abstract void loadActivityData();
+
+    public abstract void getIntentData();
+
+    /**
+     *
+     * 对页面中已经初始化好了的View进行设置，包括：设置监听、模式、默认值等等
+     * */
+    public abstract  void setActivityView();
+
+    public abstract void initActivityView();
+
+    /**
+     * 设置每个Activity的布局
+     * */
+    public abstract void setActivityContentView();
 
     @Override
     protected void onStart() {

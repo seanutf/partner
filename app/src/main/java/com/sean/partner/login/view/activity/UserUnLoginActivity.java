@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 
 import com.sean.partner.R;
 import com.sean.partner.main.HomeActivity;
@@ -27,7 +28,7 @@ import cn.bmob.v3.BmobUser;
  *
  */
 
-public class UserUnLoginActivity extends MainActivity implements UserRegisterFragment.RegisterUserDataListener{
+public class UserUnLoginActivity extends AppCompatActivity implements UserRegisterFragment.RegisterUserDataListener{
 
 
     public ViewPager viewPager;

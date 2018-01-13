@@ -10,6 +10,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.sean.partner.R;
 import com.sean.partner.MainActivity;
@@ -30,6 +31,7 @@ public class HomeActivity extends MainActivity
     FragmentManager manager;
     HomeContract.HomePresenter mPresenter;
     HomeFragment homeFragment;
+    ImageView imgUserAvatar;
 
 
 
@@ -61,9 +63,26 @@ public class HomeActivity extends MainActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_layout_home);
-        initView();
+    }
 
+    @Override
+    public void setActivityData() {
+
+    }
+
+    @Override
+    public void loadActivityData() {
+
+    }
+
+    @Override
+    public void getIntentData() {
+
+    }
+
+    @Override
+    public void setActivityView() {
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         homeFragment = HomeFragment.newInstance();
         manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
@@ -71,14 +90,25 @@ public class HomeActivity extends MainActivity
         transaction.commit();
 
 
-
         navigationView.setNavigationItemSelectedListener(this);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
-
-
         mPresenter = new HomeModelPresenter(homeFragment);
+    }
 
+    @Override
+    public void initActivityView() {
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        imgUserAvatar = (ImageView) findViewById(R.id.img_user_avatar);
+
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+
+    }
+
+    @Override
+    public void setActivityContentView() {
+        setContentView(R.layout.activity_layout_home);
     }
 
     @Override
@@ -90,13 +120,6 @@ public class HomeActivity extends MainActivity
         toggle.syncState();
     }
 
-    private void initView() {
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
-        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
-    }
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -106,6 +129,7 @@ public class HomeActivity extends MainActivity
             super.onBackPressed();
         }
     }
+
 
 
 

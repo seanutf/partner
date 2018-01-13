@@ -14,11 +14,11 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/img_user_avatar"
+        android:layout_width="@dimen/length_size_50"
+        android:layout_height="@dimen/length_size_50"
         android:paddingTop="@dimen/space_size_8"
-        app:srcCompat="@mipmap/ic_launcher"/>
+        app:srcCompat="@mipmap/ic_launcher_as_round"/>
 
     <TextView
         android:layout_width="match_parent"

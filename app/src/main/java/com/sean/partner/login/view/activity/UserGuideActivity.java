@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -29,7 +30,7 @@ import com.sean.partner.login.view.fragment.UserGuideFragment;
  *
  *
  */
-public class UserGuideActivity extends MainActivity {
+public class UserGuideActivity extends AppCompatActivity {
 
     static final int NUM_PAGES = 4;
 
