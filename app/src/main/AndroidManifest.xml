@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.sean.partner"
-          xmlns:tools="http://schemas.android.com/tools">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.sean.partner">
 
     <!-- 以下权限Bmob后端云服务平台所需 -->
     <!-- 允许联网 -->
@@ -51,14 +51,16 @@
             android:name=".main.HomeActivity"
             android:label="@string/title_activity_home"
             android:launchMode="singleTask"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
         </activity>
         <activity android:name=".create.view.activity.CreateDateActivity">
         </activity>
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login">
+        </activity>
+        <activity android:name=".setting.SettingsActivity">
         </activity>
     </application>
 
