@@ -10,13 +10,16 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.sean.partner.R;
 import com.sean.partner.MainActivity;
 import com.sean.partner.main.home.HomeContract;
 import com.sean.partner.main.home.HomeModelPresenter;
 import com.sean.partner.main.home.view.fragment.HomeFragment;
+import com.sean.partner.meta.PUser;
 import com.sean.partner.utils.view.BottomNavigationViewHelper;
 
 
@@ -32,6 +35,7 @@ public class HomeActivity extends MainActivity
     HomeContract.HomePresenter mPresenter;
     HomeFragment homeFragment;
     ImageView imgUserAvatar;
+    TextView tvUserName, tvUserDescribe;
 
 
 
@@ -89,6 +93,19 @@ public class HomeActivity extends MainActivity
         transaction.replace(R.id.root_view_fragment, homeFragment,HomeFragment.TAG);
         transaction.commit();
 
+//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_as_round);
+//        RoundedBitmapDrawable circleDrawable = RoundedBitmapDrawableFactory.create(getResources(), BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_as_round));
+//        circleDrawable.getPaint().setAntiAlias(true);
+//        circleDrawable.setCornerRadius(Math.max(bitmap.getWidth(), bitmap.getHeight()));
+//        imgUserAvatar.setImageDrawable(circleDrawable);
+
+        PUser user = null;
+
+        if(user == null){
+            tvUserName.setText(getString(R.string.text_if_user_login_out));
+            tvUserDescribe.setText(getString(R.string.text_placeholder_null));
+        }
+
 
         navigationView.setNavigationItemSelectedListener(this);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -100,7 +117,10 @@ public class HomeActivity extends MainActivity
     public void initActivityView() {
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
-        imgUserAvatar = (ImageView) findViewById(R.id.img_user_avatar);
+        View headerView = navigationView.getHeaderView(0);
+        imgUserAvatar = (ImageView) headerView.findViewById(R.id.img_user_avatar);
+        tvUserName = (TextView) headerView.findViewById(R.id.tv_user_name);
+        tvUserDescribe = (TextView) headerView.findViewById(R.id.tv_user_describe);
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
 
@@ -122,7 +142,6 @@ public class HomeActivity extends MainActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -141,21 +160,16 @@ public class HomeActivity extends MainActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_night) {
+            // todo 设置成夜间模式，设置成功后，界面显示成日间模式图标和日间模式文案
+        } else if (id == R.id.nav_setting) {
+            // todo 跳转到设置页面
+        } else if (id == R.id.nav_clear_cache) {
+            // todo 清理App的缓存
+        } else if (id == R.id.nav_feedback) {
+            // todo 跳转到反馈页面
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
