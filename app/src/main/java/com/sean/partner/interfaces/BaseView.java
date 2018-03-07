@@ -1,4 +1,4 @@
-package com.sean.partner;
+package com.sean.partner.interfaces;
 
 /**
  * Created by sean on 2017/11/28.
