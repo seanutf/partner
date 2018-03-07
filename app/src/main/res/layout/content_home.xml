@@ -9,7 +9,7 @@
     android:id="@+id/root_view_fragment"
     android:layout_marginBottom="@dimen/length_size_60"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.sean.partner.main.HomeActivity"
+    tools:context=".module.main.HomeActivity"
     tools:showIn="@layout/app_bar_home">
 
 </LinearLayout>

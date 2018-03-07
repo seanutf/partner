@@ -2,7 +2,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context="com.sean.partner.main.activity.view.fragment.ActivityFragment">
+             tools:context=".module.main.activity.view.fragment.ActivityFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
