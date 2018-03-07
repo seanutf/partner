@@ -30,37 +30,37 @@
         android:roundIcon="@mipmap/ic_launcher_as_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".login.view.activity.SplashActivity">
+        <activity android:name=".module.login.view.activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".login.view.activity.UserGuideActivity">
+        <activity android:name=".module.login.view.activity.UserGuideActivity">
         </activity>
         <activity android:name=".MainActivity">
         </activity>
-        <activity android:name=".login.view.activity.UserLoginActivity">
+        <activity android:name=".module.login.view.activity.UserLoginActivity">
         </activity>
         <activity
-            android:name=".login.view.activity.UserUnLoginActivity"
+            android:name=".module.login.view.activity.UserUnLoginActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden">
         </activity>
         <activity
-            android:name=".main.HomeActivity"
+            android:name=".module.main.HomeActivity"
             android:label="@string/title_activity_home"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
         </activity>
-        <activity android:name=".create.view.activity.CreateDateActivity">
+        <activity android:name="com.sean.partner.module.date.create.view.activity.CreateDateActivity">
         </activity>
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login">
         </activity>
-        <activity android:name=".setting.SettingsActivity">
+        <activity android:name=".module.setting.SettingsActivity">
         </activity>
     </application>
 

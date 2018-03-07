@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ff3e52b0"
-    tools:context="com.sean.partner.login.view.activity.UserLoginActivity"
+    tools:context=".module.login.view.activity.UserLoginActivity"
     android:paddingTop="10dp">
 
     <com.sean.partner.utils.view.custom.CatchScrollLayout
