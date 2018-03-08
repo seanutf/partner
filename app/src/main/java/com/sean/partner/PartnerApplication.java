@@ -21,7 +21,8 @@ public class PartnerApplication  extends Application{
     }
 
     public UserConfigures getUserConfigures(){
-        userConfigures = new UserConfigures(this);
+        if(userConfigures == null)
+            userConfigures = new UserConfigures(this);
         return userConfigures;
     }
 

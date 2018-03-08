@@ -22,13 +22,15 @@ import android.view.ViewGroup;
 
 import com.sean.partner.MainActivity;
 import com.sean.partner.R;
+import com.sean.partner.meta.User;
 import com.sean.partner.module.date.create.view.activity.CreateDateActivity;
 import com.sean.partner.module.login.view.activity.UserUnLoginActivity;
 import com.sean.partner.module.main.home.HomeContract;
-import com.sean.partner.meta.PUser;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static cn.bmob.v3.BmobUser.getCurrentUser;
 
 /**
  * Created by sean on 2017/12/21.
@@ -74,7 +76,7 @@ public class HomeFragment extends HomeParentFragment {
             @Override
             public void onClick(View view) {
 
-                PUser user = null;
+                User user = (User) getCurrentUser();
                 if(user != null){
                     mPresenter.createDate();
                 }else{
