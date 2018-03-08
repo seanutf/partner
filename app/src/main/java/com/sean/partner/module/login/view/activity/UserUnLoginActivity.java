@@ -23,7 +23,7 @@ import cn.bmob.v3.BmobUser;
 
 /**
  * Created by sean on 2017/1/7.
- *
+ *用户未登录界面
  *
  */
 

@@ -21,7 +21,7 @@ import static com.sean.partner.module.login.view.activity.UserUnLoginActivity.US
 
 /**
  * Created by sean on 2017/2/19.
- *
+ * 用户注册时的确认界面
  */
 
 public class UserRegisterConfirmFragment extends Fragment{

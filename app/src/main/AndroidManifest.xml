@@ -41,7 +41,7 @@
         </activity>
         <activity android:name=".MainActivity">
         </activity>
-        <activity android:name=".module.login.view.activity.UserLoginActivity">
+        <activity android:name=".module.login.abandon.UserLoginActivity">
         </activity>
         <activity
             android:name=".module.login.view.activity.UserUnLoginActivity"

@@ -26,7 +26,7 @@ import com.sean.partner.module.login.view.fragment.UserGuideFragment;
 
 /**
  * Created by sean on 2016/9/12.
- *
+ *用户新版引导界面
  *
  */
 public class UserGuideActivity extends AppCompatActivity {

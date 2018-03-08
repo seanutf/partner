@@ -13,6 +13,10 @@ import com.sean.partner.utils.UserConfigures;
 
 import cn.bmob.v3.Bmob;
 
+    /**
+     *
+     * 启动页面
+     * */
 public class SplashActivity extends AppCompatActivity {
 
     @Override

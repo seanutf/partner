@@ -16,7 +16,7 @@ import com.sean.partner.module.login.view.activity.UserUnLoginActivity;
 
 /**
  * Created by sean on 2017/1/7.
- *
+ * 用户登录界面
  */
 
 public class UserLoginFragment  extends Fragment {

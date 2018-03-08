@@ -1,4 +1,4 @@
-package com.sean.partner.module.login.view.activity;
+package com.sean.partner.module.login.abandon;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
