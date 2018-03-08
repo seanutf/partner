@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +18,7 @@ import android.widget.TextView;
 
 import com.sean.partner.R;
 import com.sean.partner.module.login.view.activity.UserUnLoginActivity;
+import com.sean.partner.utils.StringUtils;
 
 import cn.bmob.v3.BmobUser;
 
@@ -67,14 +70,14 @@ public class UserRegisterFragment extends Fragment {
     }
 
     public void setToolBarTitle(){
-        TextView tvloginTitle = (TextView)activity.findViewById(R.id.unlogin_title);
-        tvloginTitle.setText("同趣—注册");
+        TextView tvLoginTitle = (TextView)activity.findViewById(R.id.unlogin_title);
+        tvLoginTitle.setText("同趣—注册");
     }
 
     private void initView() {
         TextView tvLogin = (TextView)rootView.findViewById(R.id.tv_to_login);
-        TextView tvloginTitle = (TextView)activity.findViewById(R.id.unlogin_title);
-        tvloginTitle.setText("同趣—注册");
+        TextView tvLoginTitle = (TextView)activity.findViewById(R.id.unlogin_title);
+        tvLoginTitle.setText("同趣—注册");
         etUserName = (EditText)rootView.findViewById(R.id.et_register_name);
         etUserPassword = (EditText)rootView.findViewById(R.id.et_register_password);
         etUserAccount = (EditText)rootView.findViewById(R.id.et_register_account);
@@ -90,6 +93,25 @@ public class UserRegisterFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 tranDataToActivity();
+            }
+        });
+
+        etUserName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    if(!StringUtils.isLetterDigitOrChinese(s.toString())){
+
+                    }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
     }
