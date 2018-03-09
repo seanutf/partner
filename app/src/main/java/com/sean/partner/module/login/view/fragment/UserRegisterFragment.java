@@ -34,11 +34,13 @@ import cn.bmob.v3.BmobUser;
  */
 
 public class UserRegisterFragment extends MainFragment {
-    Activity activity;
-    View rootView;
-    TextView tvLogin;
+
+    private static final String TAG = UserRegisterFragment.class.getSimpleName();
+
+    TextView tvLogin, tvLoginTitle;
     EditText etUserName, etUserPassword, etUserAccount;
     TextInputLayout tilUserName, tilUserPwd, tilUserAccount;
+    Button btnRegister;
 
     RegisterUserDataListener registerUserDataListener;
 
@@ -52,22 +54,15 @@ public class UserRegisterFragment extends MainFragment {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        this.activity = (Activity) context;
-    }
-
 
     @Override
     protected void initViewData(Bundle savedInstanceState) {
-
+        tvLoginTitle.setText(getString(R.string.title_fragment_register));
     }
 
     @Override
     protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.fragment_register, container, false);
-        return rootView;
+        return inflater.inflate(R.layout.fragment_register, container, false);
     }
 
     @Override
@@ -75,10 +70,10 @@ public class UserRegisterFragment extends MainFragment {
         tvLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((UserUnLoginActivity) getActivity()).viewPager.setCurrentItem(1);
+                ((UserUnLoginActivity) activity).viewPager.setCurrentItem(1);
             }
         });
-        Button btnRegister = (Button) rootView.findViewById(R.id.btn_register);
+
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -158,22 +153,21 @@ public class UserRegisterFragment extends MainFragment {
 
     @Override
     protected void initView(View view) {
-        tvLogin = (TextView) rootView.findViewById(R.id.tv_to_login);
-        TextView tvLoginTitle = (TextView) activity.findViewById(R.id.unlogin_title);
-        tvLoginTitle.setText("同趣—注册");
-        etUserName = (EditText) rootView.findViewById(R.id.et_register_name);
-        etUserPassword = (EditText) rootView.findViewById(R.id.et_register_password);
-        etUserAccount = (EditText) rootView.findViewById(R.id.et_register_account);
-        etUserName = (EditText) rootView.findViewById(R.id.et_register_name);
-        tilUserName = rootView.findViewById(R.id.til_name);
-        tilUserPwd = rootView.findViewById(R.id.til_pwd);
-        tilUserAccount = rootView.findViewById(R.id.til_account);
+        tvLogin = (TextView) view.findViewById(R.id.tv_to_login);
+        tvLoginTitle = (TextView) activity.findViewById(R.id.unlogin_title);
+        etUserName = (EditText) view.findViewById(R.id.et_register_name);
+        etUserPassword = (EditText) view.findViewById(R.id.et_register_password);
+        etUserAccount = (EditText) view.findViewById(R.id.et_register_account);
+        etUserName = (EditText) view.findViewById(R.id.et_register_name);
+        tilUserName = view.findViewById(R.id.til_name);
+        tilUserPwd = view.findViewById(R.id.til_pwd);
+        tilUserAccount = view.findViewById(R.id.til_account);
+        btnRegister = (Button) view.findViewById(R.id.btn_register);
     }
 
 
     public void setToolBarTitle() {
-        TextView tvLoginTitle = (TextView) activity.findViewById(R.id.unlogin_title);
-        tvLoginTitle.setText("同趣—注册");
+        tvLoginTitle.setText(getString(R.string.title_fragment_register));
     }
 
     private void tranDataToActivity() {

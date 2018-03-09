@@ -17,6 +17,7 @@
     <!--登录注册页面-->
     <string name="text_activity_login_sign_up">注册</string>
     <string name="text_activity_login_login_in">登录</string>
+    <string name="title_fragment_register">同趣—注册</string>
     <string name="error_fragment_register_user_name">只能由数字,英文,中文构成</string>
     <string name="toast_fragment_register_user_email">请输入正确的邮件地址</string>
     <!--主页面-->
