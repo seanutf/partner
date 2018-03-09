@@ -16,10 +16,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.sean.partner.MainFragment;
 import com.sean.partner.R;
 import com.sean.partner.module.login.view.activity.UserUnLoginActivity;
 import com.sean.partner.utils.StringUtils;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import cn.bmob.v3.BmobUser;
 
@@ -28,9 +33,10 @@ import cn.bmob.v3.BmobUser;
  * 用户注册页面
  */
 
-public class UserRegisterFragment extends Fragment {
+public class UserRegisterFragment extends MainFragment {
     Activity activity;
     View rootView;
+    TextView tvLogin;
     EditText etUserName, etUserPassword, etUserAccount;
     TextInputLayout tilUserName, tilUserPwd, tilUserAccount;
 
@@ -52,40 +58,20 @@ public class UserRegisterFragment extends Fragment {
         this.activity = (Activity) context;
     }
 
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void initViewData(Bundle savedInstanceState) {
+
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_register, container, false);
         return rootView;
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        initView();
-    }
-
-    public void setToolBarTitle() {
-        TextView tvLoginTitle = (TextView) activity.findViewById(R.id.unlogin_title);
-        tvLoginTitle.setText("同趣—注册");
-    }
-
-    private void initView() {
-        TextView tvLogin = (TextView) rootView.findViewById(R.id.tv_to_login);
-        TextView tvLoginTitle = (TextView) activity.findViewById(R.id.unlogin_title);
-        tvLoginTitle.setText("同趣—注册");
-        etUserName = (EditText) rootView.findViewById(R.id.et_register_name);
-        etUserPassword = (EditText) rootView.findViewById(R.id.et_register_password);
-        etUserAccount = (EditText) rootView.findViewById(R.id.et_register_account);
-        etUserName = (EditText) rootView.findViewById(R.id.et_register_name);
-        tilUserName = rootView.findViewById(R.id.til_name);
-        tilUserPwd = rootView.findViewById(R.id.til_pwd);
-        tilUserAccount = rootView.findViewById(R.id.til_account);
+    protected void setViewListener() {
         tvLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,6 +108,72 @@ public class UserRegisterFragment extends Fragment {
 
             }
         });
+
+        etUserName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //s判空是因为清空editText后s为"";此时应为正常状态
+                if (StringUtils.isNotBlank(s.toString()) && !StringUtils.isLetterDigitOrChinese(s.toString())) {
+                    tilUserName.setError(getString(R.string.error_fragment_register_user_name));
+                } else {
+                    tilUserName.setError("");// 必须加上这个，否则会导致内容删除后，error信息显示为空白
+                    tilUserName.setErrorEnabled(false);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        etUserName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //s判空是因为清空editText后s为"";此时应为正常状态
+                if (StringUtils.isNotBlank(s.toString()) && !StringUtils.isLetterDigitOrChinese(s.toString())) {
+                    tilUserName.setError(getString(R.string.error_fragment_register_user_name));
+                } else {
+                    tilUserName.setError("");// 必须加上这个，否则会导致内容删除后，error信息显示为空白
+                    tilUserName.setErrorEnabled(false);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+    }
+
+    @Override
+    protected void initView(View view) {
+        tvLogin = (TextView) rootView.findViewById(R.id.tv_to_login);
+        TextView tvLoginTitle = (TextView) activity.findViewById(R.id.unlogin_title);
+        tvLoginTitle.setText("同趣—注册");
+        etUserName = (EditText) rootView.findViewById(R.id.et_register_name);
+        etUserPassword = (EditText) rootView.findViewById(R.id.et_register_password);
+        etUserAccount = (EditText) rootView.findViewById(R.id.et_register_account);
+        etUserName = (EditText) rootView.findViewById(R.id.et_register_name);
+        tilUserName = rootView.findViewById(R.id.til_name);
+        tilUserPwd = rootView.findViewById(R.id.til_pwd);
+        tilUserAccount = rootView.findViewById(R.id.til_account);
+    }
+
+
+    public void setToolBarTitle() {
+        TextView tvLoginTitle = (TextView) activity.findViewById(R.id.unlogin_title);
+        tvLoginTitle.setText("同趣—注册");
     }
 
     private void tranDataToActivity() {
@@ -132,8 +184,18 @@ public class UserRegisterFragment extends Fragment {
             BmobUser bu = new BmobUser();
             bu.setUsername(userName);
             bu.setPassword(userPassword);
-            //todo 账户因为可能手机注册不能写死到邮箱
-            bu.setEmail(userAccount);
+            //现判定是否是邮箱，如果不是邮箱默认手机
+            if(userAccount.contains("@") || userAccount.contains("\\.")){
+                if(StringUtils.isConformEmailAddr(userAccount)){
+                    bu.setEmail(userAccount);
+                } else {
+                    Toast.makeText(activity,getString(R.string.toast_fragment_register_user_email),Toast.LENGTH_SHORT).show();
+                }
+            }else {
+                if(StringUtils.isMobileNumber(userAccount)){
+                    bu.setMobilePhoneNumber(userAccount);
+                }
+            }
             if (registerUserDataListener != null) registerUserDataListener.userData(bu);
         }
 
