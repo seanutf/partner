@@ -18,8 +18,18 @@
     <string name="text_activity_login_sign_up">注册</string>
     <string name="text_activity_login_login_in">登录</string>
     <string name="title_fragment_register">同趣—注册</string>
+    <string name="title_fragment_login">同趣—登录</string>
     <string name="error_fragment_register_user_name">只能由数字,英文,中文构成</string>
     <string name="toast_fragment_register_user_email">请输入正确的邮件地址</string>
+    <string name="hint_fragment_register_user_name">数字、英文、中文范围内的昵称</string>
+    <string name="hint_fragment_register_user_pwd">6到18位密码</string>
+    <string name="hint_fragment_register_user_account">用于登录的邮箱或手机号</string>
+    <string name="text_fragment_register">注  册</string>
+    <string name="text_fragment_register_exist_user">已有账号？立即登录＞＞＞</string>
+    <string name="hint_fragment_login_user_account">请输入邮箱或手机</string>
+    <string name="hint_fragment_login_user_pwd">请输入6到18位密码</string>
+    <string name="text_fragment_login">登  录</string>
+    <string name="text_fragment_register_unregistered_user">＜＜＜还没账号，快来注册</string>
     <!--主页面-->
     <string name="text_activity_main_notice">这是主界面</string>
     <string name="title_activity_home">HomeActivity</string>

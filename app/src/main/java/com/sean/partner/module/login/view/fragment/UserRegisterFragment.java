@@ -1,12 +1,8 @@
 package com.sean.partner.module.login.view.fragment;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
-import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -22,9 +18,6 @@ import com.sean.partner.MainFragment;
 import com.sean.partner.R;
 import com.sean.partner.module.login.view.activity.UserUnLoginActivity;
 import com.sean.partner.utils.StringUtils;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import cn.bmob.v3.BmobUser;
 

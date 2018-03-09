@@ -19,6 +19,7 @@
                 android:layout_marginTop="40dp"
                 android:layout_height="60dp"
                 android:gravity="bottom"
+                android:hint="@string/hint_fragment_login_user_account"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp">
 
@@ -27,8 +28,7 @@
                     android:background="#ffffff"
                     android:paddingLeft="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:hint="请输入邮箱或手机" />
+                    android:layout_height="35dp" />
 
 
             </android.support.design.widget.TextInputLayout>
@@ -40,7 +40,7 @@
                 android:layout_height="60dp"
                 android:gravity="bottom"
                 android:layout_marginLeft="30dp"
-                android:hint="请输入6到18位密码"
+                android:hint="@string/hint_fragment_login_user_pwd"
                 android:layout_marginRight="30dp">
 
                 <EditText
@@ -60,7 +60,7 @@
                 android:id="@+id/btn_login"
                 android:layout_marginTop="25dp"
                 android:layout_gravity="center_horizontal"
-                android:text="登  录"
+                android:text="@string/text_fragment_login"
                 android:textSize="20dp"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -69,7 +69,7 @@
                 android:id="@+id/tv_to_register"
                 android:layout_gravity="left"
                 android:layout_marginLeft="10dp"
-                android:text="还没账号，快来注册"
+                android:text="@string/text_fragment_register_unregistered_user"
                 android:textColor="#ffffff"
                 android:layout_marginTop="25dp"/>
         </LinearLayout>

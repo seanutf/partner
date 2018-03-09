@@ -21,15 +21,15 @@
                 android:layout_height="60dp"
                 android:gravity="bottom"
                 android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp">
+                android:layout_marginRight="30dp"
+                android:hint="@string/hint_fragment_register_user_name" >
 
                 <EditText
                     android:id="@+id/et_register_name"
                     android:background="#ffffff"
                     android:paddingLeft="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:hint="数字,英文,中文范围内的昵称" />
+                    android:layout_height="35dp" />
 
 
             </android.support.design.widget.TextInputLayout>
@@ -40,7 +40,7 @@
                 android:layout_height="60dp"
                 android:gravity="bottom"
                 android:layout_marginLeft="30dp"
-                android:hint="6到18位密码"
+                android:hint="@string/hint_fragment_register_user_pwd"
                 android:layout_marginRight="30dp">
 
                 <EditText
@@ -60,7 +60,7 @@
                 android:layout_height="60dp"
                 android:gravity="bottom"
                 android:layout_marginLeft="30dp"
-                android:hint="用于登录的邮箱或手机号"
+                android:hint="@string/hint_fragment_register_user_account"
                 android:layout_marginRight="30dp">
 
                 <EditText
@@ -78,7 +78,7 @@
                 android:id="@+id/btn_register"
                 android:layout_marginTop="25dp"
                 android:layout_gravity="center_horizontal"
-                android:text="注  册"
+                android:text="@string/text_fragment_register"
                 android:textSize="20dp"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
                 android:layout_gravity="right"
                 android:padding="5dp"
                 android:layout_marginRight="10dp"
-                android:text="已有账号？立即登录>>"
+                android:text="@string/text_fragment_register_exist_user"
                 android:textColor="#ffffff"
                 android:layout_marginTop="25dp"/>
         </LinearLayout>

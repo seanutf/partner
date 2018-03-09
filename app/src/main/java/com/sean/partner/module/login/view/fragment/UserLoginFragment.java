@@ -1,16 +1,13 @@
 package com.sean.partner.module.login.view.fragment;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.sean.partner.MainFragment;
 import com.sean.partner.R;
 import com.sean.partner.module.login.view.activity.UserUnLoginActivity;
 
@@ -19,53 +16,43 @@ import com.sean.partner.module.login.view.activity.UserUnLoginActivity;
  * 用户登录界面
  */
 
-public class UserLoginFragment  extends Fragment {
+public class UserLoginFragment  extends MainFragment {
 
-    Activity activity;
-    View rootView;
+    TextView tvLoginTitle, tvRegister;
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        this.activity = (Activity) context;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.fragment_login_in, container, false);
-        return rootView;
-    }
-
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        initView();
-    }
-
     public void setToolBarTitle(){
-        TextView tvloginTitle = (TextView)activity.findViewById(R.id.unlogin_title);
-        tvloginTitle.setText("同趣—登录");
+        tvLoginTitle.setText(getString(R.string.title_fragment_login));
     }
 
-    private void initView() {
-        TextView tvRegister = (TextView)rootView.findViewById(R.id.tv_to_register);
+    @Override
+    protected void initViewData(Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_login_in, container, false);
+    }
+
+    @Override
+    protected void setViewListener() {
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((UserUnLoginActivity)getActivity()).viewPager.setCurrentItem(0);
             }
         });
+    }
+
+    @Override
+    protected void initView(View view) {
+        tvLoginTitle = (TextView)activity.findViewById(R.id.unlogin_title);
+        tvRegister = (TextView)view.findViewById(R.id.tv_to_register);
     }
 
     @Override
