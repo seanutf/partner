@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -31,12 +32,12 @@ public class UserRegisterFragment extends Fragment {
     Activity activity;
     View rootView;
     EditText etUserName, etUserPassword, etUserAccount;
+    TextInputLayout tilUserName, tilUserPwd, tilUserAccount;
 
     RegisterUserDataListener registerUserDataListener;
 
 
-
-    public interface RegisterUserDataListener{
+    public interface RegisterUserDataListener {
         void userData(BmobUser user);
     }
 
@@ -48,7 +49,7 @@ public class UserRegisterFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.activity = (Activity)context;
+        this.activity = (Activity) context;
     }
 
     @Override
@@ -69,26 +70,29 @@ public class UserRegisterFragment extends Fragment {
         initView();
     }
 
-    public void setToolBarTitle(){
-        TextView tvLoginTitle = (TextView)activity.findViewById(R.id.unlogin_title);
+    public void setToolBarTitle() {
+        TextView tvLoginTitle = (TextView) activity.findViewById(R.id.unlogin_title);
         tvLoginTitle.setText("同趣—注册");
     }
 
     private void initView() {
-        TextView tvLogin = (TextView)rootView.findViewById(R.id.tv_to_login);
-        TextView tvLoginTitle = (TextView)activity.findViewById(R.id.unlogin_title);
+        TextView tvLogin = (TextView) rootView.findViewById(R.id.tv_to_login);
+        TextView tvLoginTitle = (TextView) activity.findViewById(R.id.unlogin_title);
         tvLoginTitle.setText("同趣—注册");
-        etUserName = (EditText)rootView.findViewById(R.id.et_register_name);
-        etUserPassword = (EditText)rootView.findViewById(R.id.et_register_password);
-        etUserAccount = (EditText)rootView.findViewById(R.id.et_register_account);
-        etUserName = (EditText)rootView.findViewById(R.id.et_register_name);
+        etUserName = (EditText) rootView.findViewById(R.id.et_register_name);
+        etUserPassword = (EditText) rootView.findViewById(R.id.et_register_password);
+        etUserAccount = (EditText) rootView.findViewById(R.id.et_register_account);
+        etUserName = (EditText) rootView.findViewById(R.id.et_register_name);
+        tilUserName = rootView.findViewById(R.id.til_name);
+        tilUserPwd = rootView.findViewById(R.id.til_pwd);
+        tilUserAccount = rootView.findViewById(R.id.til_account);
         tvLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((UserUnLoginActivity)getActivity()).viewPager.setCurrentItem(1);
+                ((UserUnLoginActivity) getActivity()).viewPager.setCurrentItem(1);
             }
         });
-        Button btnRegister = (Button)rootView.findViewById(R.id.btn_register);
+        Button btnRegister = (Button) rootView.findViewById(R.id.btn_register);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,9 +108,13 @@ public class UserRegisterFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    if(!StringUtils.isLetterDigitOrChinese(s.toString())){
-
-                    }
+                //s判空是因为清空editText后s为"";此时应为正常状态
+                if (StringUtils.isNotBlank(s.toString()) && !StringUtils.isLetterDigitOrChinese(s.toString())) {
+                    tilUserName.setError(getString(R.string.error_fragment_register_user_name));
+                } else {
+                    tilUserName.setError("");// 必须加上这个，否则会导致内容删除后，error信息显示为空白
+                    tilUserName.setErrorEnabled(false);
+                }
             }
 
             @Override
@@ -120,19 +128,19 @@ public class UserRegisterFragment extends Fragment {
         String userName = etUserName.getText().toString().trim();
         String userPassword = etUserPassword.getText().toString().trim();
         String userAccount = etUserAccount.getText().toString().trim();
-        if(!TextUtils.isEmpty(userName) && !TextUtils.isEmpty(userPassword) && !TextUtils.isEmpty(userAccount)){
+        if (!TextUtils.isEmpty(userName) && !TextUtils.isEmpty(userPassword) && !TextUtils.isEmpty(userAccount)) {
             BmobUser bu = new BmobUser();
             bu.setUsername(userName);
             bu.setPassword(userPassword);
             //todo 账户因为可能手机注册不能写死到邮箱
             bu.setEmail(userAccount);
-            if(registerUserDataListener != null) registerUserDataListener.userData(bu);
+            if (registerUserDataListener != null) registerUserDataListener.userData(bu);
         }
 
     }
 
-    public void setRegisterUserDataListener(RegisterUserDataListener registerUserDataListener){
-        this.registerUserDataListener  = registerUserDataListener;
+    public void setRegisterUserDataListener(RegisterUserDataListener registerUserDataListener) {
+        this.registerUserDataListener = registerUserDataListener;
     }
 
     @Override

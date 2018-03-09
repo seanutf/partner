@@ -1,13 +1,13 @@
 <resources>
     <!--应用全局字符串-->
     <string name="app_name">同趣</string>
-    <string name="text_placeholder_null"> </string>
+    <string name="app_placeholder"> </string>
+    <string name="app_action_done">完成</string>
+    <string name="app_action_skip">跳过</string>
     <!--启动页面-->
     <string name="app_name_in_splash">同趣</string>
     <string name="text_ad_splash">  相        遇  \n因         为          相           同  </string>
     <!--引导页面-->
-    <string name="text_activity_guide_done">完成</string>
-    <string name="text_activity_guide_skip">跳过</string>
     <string name="welcom_head_01">Spreadsheets on the go</string>
     <string name="welcom_content_01">Get stuff done with or without an internet connection.</string>
     <string name="welcom_head_02">Share and edit together</string>
@@ -17,6 +17,7 @@
     <!--登录注册页面-->
     <string name="text_activity_login_sign_up">注册</string>
     <string name="text_activity_login_login_in">登录</string>
+    <string name="error_fragment_register_user_name">只能由数字,英文,中文构成</string>
     <!--主页面-->
     <string name="text_activity_main_notice">这是主界面</string>
     <string name="title_activity_home">HomeActivity</string>

@@ -104,7 +104,7 @@ public class HomeActivity extends MainActivity
 
         if(user == null){
             tvUserName.setText(getString(R.string.text_if_user_login_out));
-            tvUserDescribe.setText(getString(R.string.text_placeholder_null));
+            tvUserDescribe.setText(getString(R.string.app_placeholder));
         }
 
 
