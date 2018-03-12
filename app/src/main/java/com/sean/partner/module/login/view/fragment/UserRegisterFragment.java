@@ -30,6 +30,9 @@ public class UserRegisterFragment extends MainFragment {
 
     private static final String TAG = UserRegisterFragment.class.getSimpleName();
 
+    private static final int LENGTH_MIN_USER_PASSWORD = 6;
+    private static final int LENGTH_MAX_USER_PASSWORD = 18;
+
     TextView tvLogin, tvLoginTitle;
     EditText etUserName, etUserPassword, etUserAccount;
     TextInputLayout tilUserName, tilUserPwd, tilUserAccount;
@@ -97,7 +100,7 @@ public class UserRegisterFragment extends MainFragment {
             }
         });
 
-        etUserName.addTextChangedListener(new TextWatcher() {
+        etUserPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -105,35 +108,11 @@ public class UserRegisterFragment extends MainFragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                //s判空是因为清空editText后s为"";此时应为正常状态
-                if (StringUtils.isNotBlank(s.toString()) && !StringUtils.isLetterDigitOrChinese(s.toString())) {
-                    tilUserName.setError(getString(R.string.error_fragment_register_user_name));
+                if(s.length() < LENGTH_MIN_USER_PASSWORD || s.length() > LENGTH_MAX_USER_PASSWORD){
+                    tilUserPwd.setError(getString(R.string.error_fragment_register_user_password));
                 } else {
-                    tilUserName.setError("");// 必须加上这个，否则会导致内容删除后，error信息显示为空白
-                    tilUserName.setErrorEnabled(false);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        etUserName.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                //s判空是因为清空editText后s为"";此时应为正常状态
-                if (StringUtils.isNotBlank(s.toString()) && !StringUtils.isLetterDigitOrChinese(s.toString())) {
-                    tilUserName.setError(getString(R.string.error_fragment_register_user_name));
-                } else {
-                    tilUserName.setError("");// 必须加上这个，否则会导致内容删除后，error信息显示为空白
-                    tilUserName.setErrorEnabled(false);
+                    tilUserPwd.setError("");// 必须加上这个，否则会导致内容删除后，error信息显示为空白
+                    tilUserPwd.setErrorEnabled(false);
                 }
             }
 
@@ -181,11 +160,23 @@ public class UserRegisterFragment extends MainFragment {
             }else {
                 if(StringUtils.isMobileNumber(userAccount)){
                     bu.setMobilePhoneNumber(userAccount);
+                } else {
+                    Toast.makeText(activity,getString(R.string.toast_fragment_register_user_phone),Toast.LENGTH_SHORT).show();
                 }
             }
             if (registerUserDataListener != null) registerUserDataListener.userData(bu);
-        }
+        } else {
+            if(TextUtils.isEmpty(userName)){
+                Toast.makeText(activity,getString(R.string.toast_fragment_user_name_null),Toast.LENGTH_SHORT).show();
+            }
+            if(TextUtils.isEmpty(userPassword)){
+                Toast.makeText(activity,getString(R.string.toast_fragment_user_password_null),Toast.LENGTH_SHORT).show();
+            }
+            if(TextUtils.isEmpty(userAccount)){
+                Toast.makeText(activity,getString(R.string.toast_fragment_user_account_null),Toast.LENGTH_SHORT).show();
+            }
 
+        }
     }
 
     public void setRegisterUserDataListener(RegisterUserDataListener registerUserDataListener) {

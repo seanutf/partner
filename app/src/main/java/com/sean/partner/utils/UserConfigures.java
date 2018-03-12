@@ -13,11 +13,19 @@ public class UserConfigures extends SharedPreferenceSupport {
         super(context, PREFS_NAME);
     }
 
-    public void setUserGuide(String versionCode,boolean value){
+    public void setUserGuide(String versionCode, boolean value){
         setBoolean(versionCode,value);
     }
 
     public boolean getUserGuide(String versionCode){
         return  getBoolean(versionCode,false);
+    }
+
+    public void setUserAccount(String versionCode, String account){
+        setString(versionCode,account);
+    }
+
+    public String getUserAccount(String versionCode){
+        return  getString(versionCode,"");
     }
 }

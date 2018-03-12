@@ -20,7 +20,12 @@
     <string name="title_fragment_register">同趣—注册</string>
     <string name="title_fragment_login">同趣—登录</string>
     <string name="error_fragment_register_user_name">只能由数字,英文,中文构成</string>
+    <string name="error_fragment_register_user_password">密码在6到8位字符之间</string>
     <string name="toast_fragment_register_user_email">请输入正确的邮件地址</string>
+    <string name="toast_fragment_register_user_phone">请输入正确的手机号码</string>
+    <string name="toast_fragment_user_name_null">请输入昵称</string>
+    <string name="toast_fragment_user_password_null">请输入密码</string>
+    <string name="toast_fragment_user_account_null">请输入手机号或者邮箱</string>
     <string name="hint_fragment_register_user_name">数字、英文、中文范围内的昵称</string>
     <string name="hint_fragment_register_user_pwd">6到18位密码</string>
     <string name="hint_fragment_register_user_account">用于登录的邮箱或手机号</string>
