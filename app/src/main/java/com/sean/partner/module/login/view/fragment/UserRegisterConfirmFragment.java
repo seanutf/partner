@@ -12,11 +12,17 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.sean.partner.PartnerApplication;
 import com.sean.partner.R;
+import com.sean.partner.meta.User;
+import com.sean.partner.utils.StringUtils;
+import com.sean.partner.utils.UserConfigures;
+
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 
+import static cn.bmob.v3.BmobUser.getCurrentUser;
 import static com.sean.partner.module.login.view.activity.UserUnLoginActivity.USER_REGISTER_DATA;
 
 /**
@@ -24,10 +30,11 @@ import static com.sean.partner.module.login.view.activity.UserUnLoginActivity.US
  * 用户注册时的确认界面
  */
 
-public class UserRegisterConfirmFragment extends Fragment{
+public class UserRegisterConfirmFragment extends Fragment {
 
     BmobUser user;
     Activity activity;
+    UserConfigures configures;
 
 
     @Override
@@ -38,7 +45,7 @@ public class UserRegisterConfirmFragment extends Fragment{
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.activity = (Activity)context;
+        this.activity = (Activity) context;
     }
 
     @Override
@@ -59,22 +66,27 @@ public class UserRegisterConfirmFragment extends Fragment{
     }
 
     private void initView(View view) {
-        Button btnRegister = (Button)view.findViewById(R.id.btn_register_confirm);
+        Button btnRegister = (Button) view.findViewById(R.id.btn_register_confirm);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 toRegisterUser();
             }
         });
-        TextView tvRegisterInfo = (TextView)view.findViewById(R.id.tv_confirm_account);
+        TextView tvRegisterInfo = (TextView) view.findViewById(R.id.tv_confirm_account);
         Bundle bundle = getArguments();//从activity传过来的Bundle
-        if(bundle!=null){
-            user = (BmobUser)bundle.getSerializable(USER_REGISTER_DATA);
+        if (bundle != null) {
+            user = (BmobUser) bundle.getSerializable(USER_REGISTER_DATA);
         }
 
-        if(user != null){
-            tvRegisterInfo.setText("确定要使用" + user.getEmail() + "作为注册账户吗？");
+        if (user != null) {
+            if (StringUtils.isNotBlank(user.getEmail())) {
+                tvRegisterInfo.setText("确定要使用" + user.getEmail() + "作为注册账户吗？");
+            } else if (StringUtils.isNotBlank(user.getMobilePhoneNumber())) {
+                tvRegisterInfo.setText("确定要使用" + user.getMobilePhoneNumber() + "作为注册账户吗？");
+            }
         }
+        configures = ((PartnerApplication)activity.getApplication()).getUserConfigures();
 
     }
 
@@ -83,10 +95,30 @@ public class UserRegisterConfirmFragment extends Fragment{
         user.signUp(new SaveListener<BmobUser>() {
             @Override
             public void done(BmobUser s, BmobException e) {
-                if(e==null){
-                    //toast("注册成功:" +s.toString());
-                }else{
-                    //loge(e);
+                if (e == null && s != null) {
+                    s.login(new SaveListener<User>() {
+                        @Override
+                        public void done(User user, BmobException e) {
+                            if(e != null){
+                                if(user != null){
+                                    if(StringUtils.isNotBlank(user.getEmail())) {
+                                        configures.setUserAccount(((PartnerApplication)activity.getApplication()).getVersion(), user.getEmail());
+                                    } else if (StringUtils.isNotBlank(user.getMobilePhoneNumber())) {
+                                        configures.setUserAccount(((PartnerApplication)activity.getApplication()).getVersion(), user.getMobilePhoneNumber());
+                                    }
+
+                                    if(getCurrentUser() != null){
+                                        //todo 登录成功，跳转页面
+                                    }
+                                }
+
+                            } else {
+                                //todo 输出异常到文件
+                            }
+                        }
+                    });
+                } else {
+                    //todo 输出异常到文件
                 }
             }
         });

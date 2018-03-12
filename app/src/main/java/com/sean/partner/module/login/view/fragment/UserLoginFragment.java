@@ -35,6 +35,7 @@ public class UserLoginFragment  extends MainFragment {
     TextInputLayout tilUserAccount, tilUserPwd;
     EditText etUserAccount, etUserPwd;
     Button btnUserLogin;
+    UserConfigures configures;
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -51,6 +52,7 @@ public class UserLoginFragment  extends MainFragment {
         if(StringUtils.isNotBlank(lastAccount)){
             etUserAccount.setText(lastAccount);
         }
+        configures = ((PartnerApplication)activity.getApplication()).getUserConfigures();
     }
 
     @Override
@@ -102,7 +104,15 @@ public class UserLoginFragment  extends MainFragment {
                 @Override
                 public void done(User user, BmobException e) {
                     if(e != null){
-                        //todo 登录成功，跳转页面
+                        if(user != null){
+                            if(StringUtils.isNotBlank(user.getEmail())) {
+                                configures.setUserAccount(((PartnerApplication)activity.getApplication()).getVersion(), user.getEmail());
+                            } else if (StringUtils.isNotBlank(user.getMobilePhoneNumber())) {
+                                configures.setUserAccount(((PartnerApplication)activity.getApplication()).getVersion(), user.getMobilePhoneNumber());
+                            }
+                            //todo 登录成功，跳转页面
+                        }
+
                     } else {
                         //todo 输出异常到文件
                     }
@@ -181,7 +191,6 @@ public class UserLoginFragment  extends MainFragment {
      * 取之前登录成功的帐号
      * */
     private String getUserAccount() {
-        UserConfigures configures = ((PartnerApplication)activity.getApplication()).getUserConfigures();
         return configures.getUserAccount(((PartnerApplication)activity.getApplication()).getVersion());
     }
 }
