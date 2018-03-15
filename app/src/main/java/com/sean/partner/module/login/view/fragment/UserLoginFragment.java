@@ -48,11 +48,11 @@ public class UserLoginFragment  extends MainFragment {
 
     @Override
     protected void initViewData(Bundle savedInstanceState) {
+        configures = ((PartnerApplication)activity.getApplication()).getUserConfigures();
         String lastAccount = getUserAccount();
         if(StringUtils.isNotBlank(lastAccount)){
             etUserAccount.setText(lastAccount);
         }
-        configures = ((PartnerApplication)activity.getApplication()).getUserConfigures();
     }
 
     @Override

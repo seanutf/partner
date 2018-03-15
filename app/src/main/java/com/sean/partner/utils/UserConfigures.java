@@ -9,23 +9,25 @@ import android.content.Context;
 public class UserConfigures extends SharedPreferenceSupport {
 
     private static final String  PREFS_NAME = "user_configure";
+    private static final String  key_user_account = "key_user_account";
+    private static final String  key_user_guide = "key_user_guide";
     public UserConfigures(Context context) {
         super(context, PREFS_NAME);
     }
 
     public void setUserGuide(String versionCode, boolean value){
-        setBoolean(versionCode,value);
+        setBoolean(versionCode + key_user_guide,value);
     }
 
     public boolean getUserGuide(String versionCode){
-        return  getBoolean(versionCode,false);
+        return  getBoolean(versionCode + key_user_guide,false);
     }
 
     public void setUserAccount(String versionCode, String account){
-        setString(versionCode,account);
+        setString(versionCode + key_user_account, account);
     }
 
     public String getUserAccount(String versionCode){
-        return  getString(versionCode,"");
+        return  getString(versionCode + key_user_account, "");
     }
 }
