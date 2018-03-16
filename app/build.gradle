@@ -50,7 +50,7 @@ dependencies {
     //bmob-sms ：Bmob单独为短信服务提供的包，bmob-sdk内部包含了bmob-sms的短信功能,请不要重复添加
     //compile 'cn.bmob.android:bmob-sms:1.0.1'
     //如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)
-    compile 'cn.bmob.android:http-legacy:1.0'
+    //compile 'cn.bmob.android:http-legacy:1.0'
     compile 'com.android.support:design:26.0.0'
     compile files('libs/nineoldandroids-2.4.0.jar')
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
