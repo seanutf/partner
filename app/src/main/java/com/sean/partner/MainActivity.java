@@ -37,26 +37,26 @@ public abstract class MainActivity extends AppCompatActivity{
         setActivityData();
     }
 
-    public abstract void setActivityData();
-
-    public abstract void loadActivityData();
-
-    public abstract void getIntentData();
-
-    /**
-     *
-     * 对页面中已经初始化好了的View进行设置，包括：设置监听、模式、默认值等等
-     * */
-    public abstract  void setActivityViewInitStatus();
-
-    public abstract void initActivityView();
-
     /**
      * 获取根布局ResourceId
      *
      * @return 根布局ResourceId
      */
     public abstract int getContentViewResourceId();
+
+    /**
+     *
+     * 对页面中已经初始化好了的View进行设置，包括：设置监听、模式、默认值等等
+     * */
+    public abstract void initActivityView();
+
+    public abstract  void setActivityViewInitStatus();
+
+    public abstract void getIntentData();
+
+    public abstract void loadActivityData();
+
+    public abstract void setActivityData();
 
     @Override
     protected void onStart() {

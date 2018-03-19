@@ -8,7 +8,6 @@ import com.sean.partner.R;
 
 public class CreateDateActivity extends MainActivity {
 
-
     @Override
     public void setActivityData() {
 
