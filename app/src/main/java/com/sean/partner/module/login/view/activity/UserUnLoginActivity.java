@@ -123,4 +123,9 @@ public class UserUnLoginActivity extends AppCompatActivity implements UserRegist
         transaction.add(R.id.root_register_confirm_fragment, userRegisterConfirmFragment);
         transaction.commitNow();
     }
+
+    public void jumpHome(){
+        finish();
+        startActivity(new Intent(UserUnLoginActivity.this,HomeActivity.class));
+    }
 }
