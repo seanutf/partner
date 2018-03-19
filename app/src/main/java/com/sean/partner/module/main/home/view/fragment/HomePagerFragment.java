@@ -76,9 +76,4 @@ public class HomePagerFragment extends HomeParentFragment{
     public void setPresenter(HomeContract.HomePresenter presenter) {
         //mPresenter = presenter;
     }
-
-    @Override
-    public void showActivityDetail() {
-
-    }
 }

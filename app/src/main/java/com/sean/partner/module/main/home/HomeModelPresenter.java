@@ -34,7 +34,7 @@ public class HomeModelPresenter implements HomeContract.HomePresenter {
 
     @Override
     public void createDate() {
-
+        mHomeView.showCreateDate();
     }
 
     @Override

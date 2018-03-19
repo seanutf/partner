@@ -15,7 +15,7 @@ public abstract class MainActivity extends AppCompatActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setActivityContentView();
+        setContentView(getContentViewResourceId());
         setView();
         setData();
     }
@@ -25,13 +25,13 @@ public abstract class MainActivity extends AppCompatActivity{
      * */
     private void setView() {
         initActivityView();
-        setActivityView();
+        setActivityViewInitStatus();
     }
 
     /**
      * 获取页面所需数据，并进行设置
      * */
-    public void setData(){
+    private void setData(){
         getIntentData();
         loadActivityData();
         setActivityData();
@@ -47,14 +47,16 @@ public abstract class MainActivity extends AppCompatActivity{
      *
      * 对页面中已经初始化好了的View进行设置，包括：设置监听、模式、默认值等等
      * */
-    public abstract  void setActivityView();
+    public abstract  void setActivityViewInitStatus();
 
     public abstract void initActivityView();
 
     /**
-     * 设置每个Activity的布局
-     * */
-    public abstract void setActivityContentView();
+     * 获取根布局ResourceId
+     *
+     * @return 根布局ResourceId
+     */
+    public abstract int getContentViewResourceId();
 
     @Override
     protected void onStart() {

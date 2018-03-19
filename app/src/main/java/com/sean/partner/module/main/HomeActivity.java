@@ -86,7 +86,7 @@ public class HomeActivity extends MainActivity
     }
 
     @Override
-    public void setActivityView() {
+    public void setActivityViewInitStatus() {
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         homeFragment = HomeFragment.newInstance();
         manager = getSupportFragmentManager();
@@ -128,8 +128,8 @@ public class HomeActivity extends MainActivity
     }
 
     @Override
-    public void setActivityContentView() {
-        setContentView(R.layout.activity_layout_home);
+    public int getContentViewResourceId() {
+        return R.layout.activity_layout_home;
     }
 
     @Override

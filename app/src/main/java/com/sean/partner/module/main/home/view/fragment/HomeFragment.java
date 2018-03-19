@@ -47,7 +47,7 @@ public class HomeFragment extends HomeParentFragment {
     Toolbar toolbar;
     ViewPager pager;
     FloatingActionButton fab;
-    FragmentActivity activity;
+
     private HomeContract.HomePresenter mPresenter;
 
     List<PageModel> pageModels = new ArrayList<>();
@@ -248,21 +248,6 @@ public class HomeFragment extends HomeParentFragment {
     @Override
     public void setPresenter(HomeContract.HomePresenter presenter) {
         mPresenter = presenter;
-    }
-
-    @Override
-    public void showCreateDate() {
-        startActivity(new Intent(activity, CreateDateActivity.class));
-    }
-
-    @Override
-    public void showLogin() {
-        startActivity(new Intent(activity, UserUnLoginActivity.class));
-    }
-
-    @Override
-    public void hideView() {
-        //todo  fab的隐藏
     }
 
     @Override
