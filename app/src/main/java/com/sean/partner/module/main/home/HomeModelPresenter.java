@@ -20,24 +20,6 @@ public class HomeModelPresenter implements HomeContract.HomePresenter {
         mHomeView.setPresenter(this);
     }
 
-    public HomeModelPresenter(@NonNull HomeContract.PageView pageView){
-
-        mPageView = pageView;
-        mPageView.setPresenter(this);
-    }
-
-    public HomeModelPresenter(@NonNull HomeContract.PageView pageView, HomeContract.HomeView mHomeView){
-
-        this.mPageView = pageView;
-        this.mPageView.setPresenter(this);
-
-        this.mHomeView = mHomeView;
-        //mHomeView.setPresenter(this);
-    }
-
-    public void setHomeView(HomeContract.HomeView mHomeView){
-        this.mHomeView = mHomeView;
-    }
 
     @Override
     public void start() {
