@@ -16,16 +16,16 @@ public abstract class MainActivity extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getContentViewResourceId());
-        setView();
+        setView(savedInstanceState);
         setData();
     }
 
     /**
      * 对页面中所使用的View进行初始化和设置
      * */
-    private void setView() {
+    private void setView(@Nullable Bundle savedInstanceState) {
         initActivityView();
-        setActivityViewInitStatus();
+        setActivityViewInitStatus(savedInstanceState);
     }
 
     /**
@@ -50,7 +50,7 @@ public abstract class MainActivity extends AppCompatActivity{
      * */
     public abstract void initActivityView();
 
-    public abstract  void setActivityViewInitStatus();
+    public abstract  void setActivityViewInitStatus(@Nullable Bundle savedInstanceState);
 
     public abstract void getIntentData();
 

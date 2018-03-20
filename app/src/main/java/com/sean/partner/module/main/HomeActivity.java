@@ -2,6 +2,7 @@ package com.sean.partner.module.main;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -86,7 +87,7 @@ public class HomeActivity extends MainActivity
     }
 
     @Override
-    public void setActivityViewInitStatus() {
+    public void setActivityViewInitStatus(@Nullable Bundle savedInstanceState) {
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         homeFragment = HomeFragment.newInstance();
         manager = getSupportFragmentManager();
