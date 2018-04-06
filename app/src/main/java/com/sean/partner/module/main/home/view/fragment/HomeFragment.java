@@ -80,7 +80,8 @@ public class HomeFragment extends HomeParentFragment {
                 if(user != null){
                     mPresenter.createDate();
                 }else{
-                    mPresenter.userLogin();
+                    mPresenter.createDate();
+                    //mPresenter.userLogin();
                 }
             }
         });
