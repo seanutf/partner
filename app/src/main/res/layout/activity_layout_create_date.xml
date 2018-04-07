@@ -18,9 +18,9 @@
 
         <TextView
             android:id="@+id/unlogin_title"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
+            android:text="@string/title_activity_create_date"
             android:textColor="@color/text_a"
             android:textSize="20sp"/>
     </android.support.v7.widget.Toolbar>
@@ -110,5 +110,44 @@
             android:layout_height="wrap_content"
             android:text="固定人数"/>
     </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_time"
+        app:layout_constraintTop_toBottomOf="@+id/til_count"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="点击选择相聚时间"
+        android:padding="15dp"
+        android:maxLines="1"
+        android:layout_marginTop="3dp"
+        android:background="@color/bg_gery"
+        android:layout_marginLeft="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_addr"
+        app:layout_constraintTop_toBottomOf="@+id/tv_time"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="点击选择相聚地点"
+        android:padding="15dp"
+        android:maxLines="1"
+        android:background="@color/bg_gery"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_friend"
+        app:layout_constraintTop_toBottomOf="@+id/tv_addr"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="点击去邀请好友"
+        android:padding="15dp"
+        android:maxLines="1"
+        android:background="@color/bg_gery"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"/>
 
 </android.support.constraint.ConstraintLayout>
