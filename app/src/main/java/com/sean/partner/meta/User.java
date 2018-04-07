@@ -23,6 +23,7 @@ public class User extends BmobUser{
     private Integer score;      //积分
     private String desc;        //签名
     private String addr;        //地址
+    private int friendCount;    //好友数量
     //未确定数据类型和待扩充的信息
 //    private String realName;    //真实姓名
 //    private String idCard;      //身份证号
@@ -94,5 +95,13 @@ public class User extends BmobUser{
 
     public void setAddr(String addr) {
         this.addr = addr;
+    }
+
+    public int getFriendCount() {
+        return friendCount;
+    }
+
+    public void setFriendCount(int friendCount) {
+        this.friendCount = friendCount;
     }
 }
