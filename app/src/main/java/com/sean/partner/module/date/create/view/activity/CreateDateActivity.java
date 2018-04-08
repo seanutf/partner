@@ -2,9 +2,13 @@ package com.sean.partner.module.date.create.view.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.Toolbar;
 
 import com.sean.partner.MainActivity;
 import com.sean.partner.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 /**
  * 1.检测是否为默认头像，不是，不做任何处理，是则
  * 2.检测是否给相机权限，没有，申请权限，允许则不做任何处理，拒绝，给提示，允许则不做任何处理，再拒绝
@@ -23,6 +27,10 @@ import com.sean.partner.R;
  * 5好友逻辑
  * */
 public class CreateDateActivity extends MainActivity {
+
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+
 
     @Override
     public void setActivityData() {
@@ -46,7 +54,7 @@ public class CreateDateActivity extends MainActivity {
 
     @Override
     public void initActivityView() {
-
+        ButterKnife.bind(this);
     }
 
     @Override
