@@ -6,17 +6,18 @@ import android.os.Bundle;
 
 import com.sean.partner.MainActivity;
 import com.sean.partner.R;
+import com.sean.partner.module.setting.view.AppSettingsFragment;
 
-public class SettingsActivity extends AppCompatActivity {
+public class AppSettingsActivity extends AppCompatActivity {
 
-    private static final String TAG = SettingsActivity.class.getSimpleName();
+    private static final String TAG = AppSettingsActivity.class.getSimpleName();
 
     String testId;
 
     public static final String KEY_ID_TEST = "key_id_test";
 
     public static void startActivity(MainActivity activity, String testId){
-        Intent intent = new Intent(activity, SettingsActivity.class);
+        Intent intent = new Intent(activity, AppSettingsActivity.class);
         intent.putExtra(KEY_ID_TEST, testId);
         activity.startActivity(intent);
     }
@@ -33,5 +34,8 @@ public class SettingsActivity extends AppCompatActivity {
                 testId += " good job!";
             }
         }
+
+        getSupportFragmentManager().beginTransaction().
+                add(R.id.container, AppSettingsFragment.newInstance()).commitNowAllowingStateLoss();
     }
 }

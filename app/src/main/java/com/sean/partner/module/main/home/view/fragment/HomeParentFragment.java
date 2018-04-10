@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 
+import com.sean.partner.module.camera.CameraActivity;
 import com.sean.partner.module.date.create.view.activity.CreateDateActivity;
 import com.sean.partner.module.login.view.activity.UserUnLoginActivity;
 import com.sean.partner.module.main.home.HomeContract;
@@ -35,7 +36,8 @@ public class HomeParentFragment extends Fragment implements HomeContract.HomeVie
 
     @Override
     public void showCreateDate() {
-        startActivity(new Intent(activity, CreateDateActivity.class));
+        //startActivity(new Intent(activity, CreateDateActivity.class));
+        startActivity(new Intent(activity, CameraActivity.class));
     }
 
     @Override

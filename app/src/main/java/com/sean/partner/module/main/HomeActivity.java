@@ -21,7 +21,7 @@ import com.sean.partner.module.main.home.HomeContract;
 import com.sean.partner.module.main.home.HomeModelPresenter;
 import com.sean.partner.module.main.home.view.fragment.HomeFragment;
 import com.sean.partner.meta.PUser;
-import com.sean.partner.module.setting.SettingsActivity;
+import com.sean.partner.module.setting.AppSettingsActivity;
 import com.sean.partner.utils.view.BottomNavigationViewHelper;
 
 
@@ -166,7 +166,7 @@ public class HomeActivity extends MainActivity
             // todo 设置成夜间模式，设置成功后，界面显示成日间模式图标和日间模式文案
         } else if (id == R.id.nav_setting) {
             // todo 跳转到设置页面
-            SettingsActivity.startActivity(this, "This is");
+            AppSettingsActivity.startActivity(this, "This is");
         } else if (id == R.id.nav_clear_cache) {
             // todo 清理App的缓存
         } else if (id == R.id.nav_feedback) {
