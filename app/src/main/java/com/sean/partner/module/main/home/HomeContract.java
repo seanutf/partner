@@ -24,6 +24,8 @@ public interface HomeContract {
         void showLogin();
 
         void showActivityDetail();
+
+        int getStatusBarColor();
     }
 
     /**
@@ -50,6 +52,8 @@ public interface HomeContract {
         void clickItem();
 
         void listSliding();
+
+        int getStatusBarColor();
     }
 
 

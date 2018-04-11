@@ -51,4 +51,9 @@ public class HomeModelPresenter implements HomeContract.HomePresenter {
     public void listSliding() {
         mHomeView.hideView();
     }
+
+    @Override
+    public int getStatusBarColor() {
+        return mHomeView.getStatusBarColor();
+    }
 }

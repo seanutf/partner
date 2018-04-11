@@ -6,6 +6,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorLightGreen">#00CA9A</color>
+    <color name="colormidGreen">#00EC00</color>
     <color name="control_background">#cc4285f4</color>
     <!-- 一般文本 -->
     <color name="text_a">#ff434343</color>

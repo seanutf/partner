@@ -95,7 +95,7 @@ public class HomeActivity extends MainActivity
         manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(R.id.root_view_fragment, homeFragment,HomeFragment.TAG);
-        transaction.commit();
+        transaction.commitNowAllowingStateLoss();
 
 //        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_as_round);
 //        RoundedBitmapDrawable circleDrawable = RoundedBitmapDrawableFactory.create(getResources(), BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_as_round));
@@ -115,7 +115,7 @@ public class HomeActivity extends MainActivity
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
         mPresenter = new HomeModelPresenter(homeFragment);
-        initImmersive();
+        //initImmersive();
     }
 
     @Override
@@ -134,6 +134,11 @@ public class HomeActivity extends MainActivity
     @Override
     public int getContentViewResourceId() {
         return R.layout.activity_layout_home;
+    }
+
+    @Override
+    public int setStatusBarColor() {
+        return mPresenter.getStatusBarColor();
     }
 
     @Override

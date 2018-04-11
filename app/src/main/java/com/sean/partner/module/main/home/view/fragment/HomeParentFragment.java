@@ -49,4 +49,9 @@ public class HomeParentFragment extends Fragment implements HomeContract.HomeVie
     public void showActivityDetail() {
 
     }
+
+    @Override
+    public int getStatusBarColor() {
+        return 0;
+    }
 }

@@ -272,6 +272,11 @@ public class HomeFragment extends HomeParentFragment {
 
     }
 
+    @Override
+    public int getStatusBarColor() {
+        return getResources().getColor(R.color.colorPrimary);
+    }
+
     public Toolbar getToolBar(){
         return toolbar;
     }
