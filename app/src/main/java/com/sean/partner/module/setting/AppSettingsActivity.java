@@ -8,6 +8,14 @@ import com.sean.partner.MainActivity;
 import com.sean.partner.R;
 import com.sean.partner.module.setting.view.AppSettingsFragment;
 
+/**
+ * 应用的设置页面
+ * 初步约定从以下设置中选取几个作为设置选项：
+ * 允许用户指定是否启用通知，
+ * 允许用户指定是否启用同步，
+ * 指定应用与云端同步数据的频率
+ * 是否仅在有 Wi-Fi 时才执行上传/下载操作
+ * */
 public class AppSettingsActivity extends AppCompatActivity {
 
     private static final String TAG = AppSettingsActivity.class.getSimpleName();
