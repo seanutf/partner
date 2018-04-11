@@ -43,7 +43,7 @@
         </activity>
         <activity android:name=".module.login.view.activity.UserGuideActivity"/>
         <activity android:name=".MainActivity"/>
-        <activity android:name=".module.login.abandon.UserLoginActivity"/>
+        <activity android:name=".module.login.deprecated.UserLoginActivity"/>
         <activity
             android:name=".module.login.view.activity.UserUnLoginActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden"/>

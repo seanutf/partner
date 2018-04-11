@@ -1,4 +1,4 @@
-package com.sean.partner.module.login.abandon;
+package com.sean.partner.module.login.deprecated;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
