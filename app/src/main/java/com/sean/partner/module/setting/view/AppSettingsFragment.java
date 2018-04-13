@@ -2,15 +2,11 @@ package com.sean.partner.module.setting.view;
 
 import android.os.Bundle;
 import android.support.v7.preference.PreferenceFragmentCompat;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.sean.partner.MainFragment;
 import com.sean.partner.R;
 
 /**
- * Created by Administrator on 2018/4/10.
+ * Created by Sean on 2018/4/10.
+ * 应用设置页面的fragment
  */
 
 public class AppSettingsFragment extends PreferenceFragmentCompat {

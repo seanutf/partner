@@ -5,6 +5,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.widget.Toast;
 
+import com.sean.partner.utils.LogUtil;
 import com.sean.partner.utils.UserConfigures;
 import com.sean.partner.meta.User;
 
@@ -15,9 +16,12 @@ import cn.bmob.v3.BmobUser;
  */
 public class PartnerApplication  extends Application{
     UserConfigures userConfigures;
+    public static PartnerApplication instance;
     @Override
     public void onCreate() {
         super.onCreate();
+        instance = this;
+        LogUtil.initUncaughtExceptionHandler(this);
     }
 
     public UserConfigures getUserConfigures(){
