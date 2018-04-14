@@ -21,6 +21,9 @@ public class FileUtils {
     private static final String LOG_TAG = FileUtils.class.getName();
 
     private static final String DEFAULT_ENCODING = "UTF-8";
+    private static String CRASH_PATH;
+    private static final String FILE_NAME = "crash";
+    private static final String FILE_NAME_SUFFIX = ".txt";
 
     public static boolean writeStringToFile(String content, File dest) throws IOException {
         return writeStringToFile(content, dest, DEFAULT_ENCODING);
@@ -327,5 +330,17 @@ public class FileUtils {
         }
 
         return appCacheRootDir;
+    }
+
+    public static File getCrashFile(final Context context, String timeStr){
+        CRASH_PATH = context.getExternalFilesDir(null).getPath() + "/crash/";
+        File dir = new File(CRASH_PATH);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+
+        File file = new File(CRASH_PATH + FILE_NAME + timeStr + FILE_NAME_SUFFIX);
+
+        return file;
     }
 }

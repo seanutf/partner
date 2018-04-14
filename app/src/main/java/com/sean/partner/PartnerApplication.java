@@ -21,7 +21,7 @@ public class PartnerApplication  extends Application{
     public void onCreate() {
         super.onCreate();
         instance = this;
-        LogUtil.initUncaughtExceptionHandler(this);
+        LogUtil.initCrashHandler(this);
     }
 
     public UserConfigures getUserConfigures(){

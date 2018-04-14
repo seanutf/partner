@@ -7,8 +7,8 @@ import com.sean.partner.BuildConfig;
 
 public class LogUtil {
 
-	public static void initUncaughtExceptionHandler(Context context){
-			Thread.setDefaultUncaughtExceptionHandler(CrashHandler.getInstance(context));
+	public static void initCrashHandler(Context context){
+			CrashHandler.getInstance().init(context);
 	}
 	
 	public static void e(String tag, Throwable tr){
