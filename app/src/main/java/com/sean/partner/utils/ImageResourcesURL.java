@@ -11,7 +11,7 @@ package com.sean.partner.utils;
 
 public class ImageResourcesURL {
     private static String[] imgURLs = new String[]{
-            "http://www.teepr.com/wp-content/uploads/2017/08/2749855-1.jpg",
+            "http://img01.taopic.com/161104/234968-16110405515238.jpg",
             "http://inews.gtimg.com/newsapp_match/0/819281829/0",
            "http://img.taopic.com/uploads/allimg/120727/201995-120HG1030762.jpg",
             "http://img.taopic.com/uploads/allimg/120724/201995-120H421244562.jpg",
@@ -62,7 +62,6 @@ public class ImageResourcesURL {
             "http://img01.taopic.com/161104/234968-1611040TS292.jpg",
             "http://img01.taopic.com/161104/234968-1611040H51288.jpg",
             "http://img01.taopic.com/161104/234968-16110406315281.jpg",
-            "http://img01.taopic.com/161104/234968-16110405515238.jpg",
             "http://img01.taopic.com/161104/234948-161104091U485.jpg"
     };
 
