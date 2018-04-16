@@ -2,7 +2,13 @@ package com.sean.partner.module.date.create.view.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.sean.partner.MainActivity;
 import com.sean.partner.R;
@@ -30,7 +36,32 @@ public class CreateDateActivity extends MainActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-
+    @BindView(R.id.til_content)
+    TextInputLayout tilContent;
+    @BindView(R.id.et_content)
+    EditText etContent;
+    @BindView(R.id.rv_pic_list)
+    RecyclerView rvImageList;
+    @BindView(R.id.til_tags)
+    TextInputLayout tilTags;
+    @BindView(R.id.et_tags)
+    EditText etTags;
+    @BindView(R.id.til_count)
+    TextInputLayout tilCount;
+    @BindView(R.id.et_count)
+    EditText etCount;
+    @BindView(R.id.rg_people_count)
+    RadioGroup rgPeopleCount;
+    @BindView(R.id.rb_max_count)
+    RadioButton rbMaxCount;
+    @BindView(R.id.rb_fix_count)
+    RadioButton rbFixCount;
+    @BindView(R.id.tv_time)
+    TextView tvTime;
+    @BindView(R.id.tv_addr)
+    TextView tvAddr;
+    @BindView(R.id.tv_friend)
+    TextView tvFriend;
 
     @Override
     public void setActivityData() {
