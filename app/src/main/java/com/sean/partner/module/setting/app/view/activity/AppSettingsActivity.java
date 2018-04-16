@@ -1,4 +1,4 @@
-package com.sean.partner.module.setting;
+package com.sean.partner.module.setting.app.view.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.sean.partner.MainActivity;
 import com.sean.partner.R;
-import com.sean.partner.module.setting.view.AppSettingsFragment;
+import com.sean.partner.module.setting.app.view.fragment.AppSettingsFragment;
 
 /**
  * 应用的设置页面

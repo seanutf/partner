@@ -1,4 +1,4 @@
-package com.sean.partner.module.setting.view;
+package com.sean.partner.module.setting.app.view.fragment;
 
 import android.os.Bundle;
 import android.support.v7.preference.PreferenceFragmentCompat;

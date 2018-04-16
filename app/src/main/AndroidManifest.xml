@@ -58,9 +58,10 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"/>
         <activity
-            android:name=".module.setting.AppSettingsActivity"
+            android:name=".module.setting.app.view.activity.AppSettingsActivity"
             android:theme="@style/AppSettingTheme" />
         <activity android:name=".module.camera.CameraActivity"/>
+        <activity android:name=".module.setting.profile.view.activity.ProfileSettingActivity"/>
     </application>
 
 </manifest>

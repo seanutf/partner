@@ -6,6 +6,6 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".module.setting.AppSettingsActivity">
+    tools:context=".module.setting.app.view.activity.AppSettingsActivity">
 
 </android.support.constraint.ConstraintLayout>
