@@ -93,4 +93,6 @@
 
         ]]>
     </string>
+    <!-- 应用设置页面-->
+    <string name="title_activity_settings_app">设置</string>
 </resources>

@@ -3,9 +3,9 @@
 
         <style name="ActivityTheme" parent="Theme.AppCompat.Light">
                 <!-- Customize your theme here. -->
-                <item name="colorPrimary">@color/colorPrimary</item>
-                <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-                <item name="colorAccent">@color/colorAccent</item>
+                <item name="colorPrimary">@color/colorDayPrimary</item>
+                <item name="colorPrimaryDark">@color/colorDayPrimaryDark</item>
+                <item name="colorAccent">@color/colorDayAccent</item>
                 <item name="android:windowTranslucentStatus">true</item>
         </style>
 </resources>

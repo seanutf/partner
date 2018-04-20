@@ -1,11 +1,11 @@
 package com.sean.partner.module.setting.app.view.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.view.View;
 
 import com.sean.partner.MainActivity;
 import com.sean.partner.R;
+import com.sean.partner.global.view.AppBarActivity;
 import com.sean.partner.module.setting.app.view.fragment.AppSettingsFragment;
 
 /**
@@ -16,11 +16,9 @@ import com.sean.partner.module.setting.app.view.fragment.AppSettingsFragment;
  * 指定应用与云端同步数据的频率
  * 是否仅在有 Wi-Fi 时才执行上传/下载操作
  * */
-public class AppSettingsActivity extends AppCompatActivity {
+public class AppSettingsActivity extends AppBarActivity {
 
     private static final String TAG = AppSettingsActivity.class.getSimpleName();
-
-    String testId;
 
     public static final String KEY_ID_TEST = "key_id_test";
 
@@ -30,19 +28,19 @@ public class AppSettingsActivity extends AppCompatActivity {
         activity.startActivity(intent);
     }
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+    public int getChildViewResId() {
+        return R.layout.activity_settings_app;
+    }
 
-        if(getIntent() != null){
-            Intent intent = getIntent();
-            testId = intent.getStringExtra(KEY_ID_TEST);
-            if(testId != null && !testId.equals("")){
-                testId += " good job!";
-            }
-        }
+    @Override
+    public int getAppBarTitleResId() {
+        return R.string.title_activity_settings_app;
+    }
 
+    @Override
+    public void initChildView(View childView) {
         getSupportFragmentManager().beginTransaction().
                 add(R.id.container, AppSettingsFragment.newInstance()).commitNowAllowingStateLoss();
     }

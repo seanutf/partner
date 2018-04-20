@@ -5,11 +5,16 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.widget.Toast;
 
+import com.sean.partner.utils.KeyUtils;
 import com.sean.partner.utils.LogUtil;
 import com.sean.partner.utils.UserConfigures;
 import com.sean.partner.meta.User;
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.commonsdk.UMConfigure;
 
 import cn.bmob.v3.BmobUser;
+
+import static com.umeng.commonsdk.UMConfigure.DEVICE_TYPE_PHONE;
 
 /**
  * Created by sean on 2016/9/9.
@@ -22,6 +27,17 @@ public class PartnerApplication  extends Application{
         super.onCreate();
         instance = this;
         LogUtil.initCrashHandler(this);
+        initThirdPartySDK();
+    }
+
+    private void initThirdPartySDK() {
+        initStatistics();
+    }
+
+    private void initStatistics() {
+        UMConfigure.init(this, KeyUtils.UMENG_APP_KEY, KeyUtils.APP_CHANNEL_TYPE_GOOGLE, DEVICE_TYPE_PHONE, null);
+        MobclickAgent.setScenarioType(instance, MobclickAgent.EScenarioType.E_UM_NORMAL);// 场景类型设置
+        UMConfigure.setLogEnabled(BuildConfig.DEBUG);// 设置开启日志,发布时请关闭日志
     }
 
     public UserConfigures getUserConfigures(){

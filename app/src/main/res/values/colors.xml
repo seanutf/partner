@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorDarkGreen">#355555</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="colorWhite">#FFFFFF</color>
-    <color name="colorLightGreen">#00CA9A</color>
-    <color name="colormidGreen">#00EC00</color>
+    <!--Toolbar 颜色区域开始-->
+    <!--默认Toolbar颜色-->
+    <color name="colorDayPrimary">#4285F4</color>
+    <!--默认匹配Toolbar的状态栏颜色-->
+    <color name="colorDayPrimaryDark">#3367D6</color>
+    <color name="colorDayAccent">#FF4081</color>
+    <!-- 页面主背景色 -->
+    <color name="colorDayWhite">#FFFFFF</color>
+
+    <color name="colorDayGreenDark">#355555</color>
+    <color name="colorDayGreenLight">#00CA9A</color>
+    <color name="colorDayGreenMid">#00EC00</color>
     <color name="control_background">#cc4285f4</color>
     <!-- 一般文本 -->
     <color name="text_a">#ff434343</color>

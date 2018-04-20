@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.sean.partner.MainActivity;
+import com.sean.partner.R;
 
 /**
  * Created by Sean on 2018/4/16.
@@ -14,7 +15,7 @@ public class ProfileSettingActivity extends MainActivity {
 
     @Override
     public int getContentViewResourceId() {
-        return 0;
+        return R.layout.activity_settings_profile;
     }
 
     @Override

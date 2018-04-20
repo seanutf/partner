@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorDayPrimary</item>
+        <item name="colorPrimaryDark">@color/colorDayPrimaryDark</item>
+        <item name="colorAccent">@color/colorDayAccent</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowBackground">@android:color/white</item>
         <item name="actionBarStyle">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
@@ -24,9 +24,9 @@
 
     <style name="ActivityTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorDayPrimary</item>
+        <item name="colorPrimaryDark">@color/colorDayPrimaryDark</item>
+        <item name="colorAccent">@color/colorDayAccent</item>
         <item name="android:windowTranslucentStatus">true</item>
     </style>
 
@@ -36,7 +36,7 @@
 
     <style name="AppSettingTheme" parent="AppTheme">
         <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
-        <item name="android:windowBackground">@color/colorDarkGreen</item>
+        <item name="android:windowBackground">@color/colorDayWhite</item>
     </style>
 
 </resources>
