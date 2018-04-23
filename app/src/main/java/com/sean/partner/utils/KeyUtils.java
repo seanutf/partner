@@ -8,6 +8,9 @@ public class KeyUtils {
 
     //友盟
     public static final String UMENG_APP_KEY = "5ad93fbab27b0a0ae70000c8";
+    // Bomb应用id
+    public static final String BOMB_APP_ID = "c0e13b7b1eafe3ceb95c31888997c115";
+
 
     //渠道
     //google, yingyongbao, wandoujia, huawei, xiaomi, vivo, oppo,

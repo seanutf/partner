@@ -4,6 +4,8 @@
     <string name="app_placeholder"> </string>
     <string name="app_action_done">完成</string>
     <string name="app_action_skip">跳过</string>
+    <string name="app_action_sure">确定</string>
+    <string name="app_action_cancel">取消</string>
     <!--启动页面-->
     <string name="app_name_in_splash">同趣</string>
     <string name="text_ad_splash">  相        遇  \n因         为          相           同  </string>
@@ -94,5 +96,9 @@
         ]]>
     </string>
     <!-- 应用设置页面-->
-    <string name="title_activity_settings_app">设置</string>
+    <string name="title_activity_settings">设置</string>
+    <!--创建活动页面-->
+    <string name="alert_dialog_lost_user_info_for_create">创建活动前需要补全头像和联系方式</string>
+    <!-- 个人信息设置页面 -->
+    <string name="title_activity_settings_profile">个人设置</string>
 </resources>

@@ -24,6 +24,7 @@ public class User extends BmobUser{
     private String desc;        //签名
     private String addr;        //地址
     private int friendCount;    //好友数量
+    private String contactNumber;  //联系方式，可能是电话、微信号、QQ号、其他方式
     //未确定数据类型和待扩充的信息
 //    private String realName;    //真实姓名
 //    private String idCard;      //身份证号
@@ -103,5 +104,13 @@ public class User extends BmobUser{
 
     public void setFriendCount(int friendCount) {
         this.friendCount = friendCount;
+    }
+
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
     }
 }

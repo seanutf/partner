@@ -36,7 +36,7 @@ public class AppSettingsActivity extends AppBarActivity {
 
     @Override
     public int getAppBarTitleResId() {
-        return R.string.title_activity_settings_app;
+        return R.string.title_activity_settings;
     }
 
     @Override

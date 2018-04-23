@@ -68,7 +68,7 @@ public class UserRegisterConfirmFragment extends MainFragment {
                                         configures.setUserAccount(((PartnerApplication)activity.getApplication()).getVersion(), user.getMobilePhoneNumber());
                                     }
 
-                                    if(getCurrentUser() != null){
+                                    if(getCurrentUser(User.class) != null){
                                         //登录成功，跳转页面
                                         if(activity instanceof UserUnLoginActivity)
                                             ((UserUnLoginActivity)activity).jumpHome();

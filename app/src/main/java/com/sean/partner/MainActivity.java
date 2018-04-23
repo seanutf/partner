@@ -14,6 +14,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
+import com.umeng.analytics.MobclickAgent;
+
 import static android.os.Build.VERSION_CODES.KITKAT;
 
 /**
@@ -67,7 +69,7 @@ public abstract class MainActivity extends AppCompatActivity {
         mContentView.addView(statusBarView, 0, lp);
     }
 
-    public int getStatusBarHeight() {
+    private int getStatusBarHeight() {
         int result = 0;
         int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
         if (resourceId > 0) {
@@ -114,7 +116,7 @@ public abstract class MainActivity extends AppCompatActivity {
     public abstract void setActivityData();
 
     public int setStatusBarColor(){
-        return getResources().getColor(R.color.control_background);
+        return getResources().getColor(R.color.colorDayPrimaryDark);
     }
 
     @Override
@@ -125,11 +127,15 @@ public abstract class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        //友盟统计
+        MobclickAgent.onResume(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        //友盟统计
+        MobclickAgent.onPause(this);
     }
 
     @Override

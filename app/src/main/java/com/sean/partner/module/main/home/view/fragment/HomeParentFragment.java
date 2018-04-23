@@ -36,8 +36,7 @@ public class HomeParentFragment extends Fragment implements HomeContract.HomeVie
 
     @Override
     public void showCreateDate() {
-        //startActivity(new Intent(activity, CreateDateActivity.class));
-        startActivity(new Intent(activity, CameraActivity.class));
+        startActivity(new Intent(activity, CreateDateActivity.class));
     }
 
     @Override

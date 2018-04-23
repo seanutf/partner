@@ -8,7 +8,6 @@ import android.support.annotation.StringRes;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
@@ -76,12 +75,11 @@ public class HomeFragment extends HomeParentFragment {
             @Override
             public void onClick(View view) {
 
-                User user = (User) getCurrentUser();
+                User user = getCurrentUser(User.class);
                 if(user != null){
                     mPresenter.createDate();
                 }else{
-                    mPresenter.createDate();
-                    //mPresenter.userLogin();
+                    mPresenter.userLogin();
                 }
             }
         });
@@ -274,7 +272,7 @@ public class HomeFragment extends HomeParentFragment {
 
     @Override
     public int getStatusBarColor() {
-        return getResources().getColor(R.color.colorPrimary);
+        return getResources().getColor(R.color.colorDayPrimary);
     }
 
     public Toolbar getToolBar(){
