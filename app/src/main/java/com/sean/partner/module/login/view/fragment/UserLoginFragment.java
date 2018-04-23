@@ -24,6 +24,8 @@ import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 
+import static cn.bmob.v3.BmobUser.getCurrentUser;
+
 /**
  * Created by sean on 2017/1/7.
  * 用户登录界面
@@ -103,18 +105,27 @@ public class UserLoginFragment  extends MainFragment {
             user.login(new SaveListener<User>() {
                 @Override
                 public void done(User user, BmobException e) {
-                    if(e != null){
+                    if(e == null){
                         if(user != null){
                             if(StringUtils.isNotBlank(user.getEmail())) {
                                 configures.setUserAccount(((PartnerApplication)activity.getApplication()).getVersion(), user.getEmail());
                             } else if (StringUtils.isNotBlank(user.getMobilePhoneNumber())) {
                                 configures.setUserAccount(((PartnerApplication)activity.getApplication()).getVersion(), user.getMobilePhoneNumber());
                             }
-                            //todo 登录成功，跳转页面
+                            //登录成功，跳转页面
+                            if(getCurrentUser(User.class) != null){
+                                //登录成功，跳转页面
+                                if(activity instanceof UserUnLoginActivity)
+                                    ((UserUnLoginActivity)activity).jumpHome();
+                            } else {
+                                //todo 提示登录错误，请重试
+                                btnUserLogin.setEnabled(true);
+                            }
                         }
 
                     } else {
                         //todo 输出异常到文件
+                        btnUserLogin.setEnabled(true);
                     }
                 }
             });

@@ -53,14 +53,15 @@ public class UserRegisterConfirmFragment extends MainFragment {
 
     private void toRegisterUser() {
         //注意：不能用save方法进行注册
+        //todo 修改为手机号加密码登录，需要修改注册逻辑，见文档
         user.signUp(new SaveListener<BmobUser>() {
             @Override
             public void done(BmobUser s, BmobException e) {
                 if (e == null && s != null) {
-                    s.login(new SaveListener<User>() {
+                    user.login(new SaveListener<User>() {
                         @Override
                         public void done(User user, BmobException e) {
-                            if(e != null){
+                            if(e == null){
                                 if(user != null){
                                     if(StringUtils.isNotBlank(user.getEmail())) {
                                         configures.setUserAccount(((PartnerApplication)activity.getApplication()).getVersion(), user.getEmail());
