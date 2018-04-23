@@ -35,6 +35,8 @@ public class UserRegisterConfirmFragment extends MainFragment {
     Button btnRegister;
     TextView tvRegisterInfo;
 
+    public static final String TAG = UserRegisterConfirmFragment.class.getSimpleName();
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

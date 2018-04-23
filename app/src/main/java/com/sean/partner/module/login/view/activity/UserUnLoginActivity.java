@@ -120,8 +120,9 @@ public class UserUnLoginActivity extends AppCompatActivity implements UserRegist
         bundle.putSerializable(USER_REGISTER_DATA, user);
         UserRegisterConfirmFragment userRegisterConfirmFragment = new UserRegisterConfirmFragment();
         userRegisterConfirmFragment.setArguments(bundle);
-        transaction.add(R.id.root_register_confirm_fragment, userRegisterConfirmFragment);
-        transaction.commitNow();
+        transaction.add(R.id.root_register_confirm_fragment, userRegisterConfirmFragment, UserRegisterConfirmFragment.TAG);
+        transaction.addToBackStack(UserRegisterConfirmFragment.TAG);
+        transaction.commit();
     }
 
     public void jumpHome(){
