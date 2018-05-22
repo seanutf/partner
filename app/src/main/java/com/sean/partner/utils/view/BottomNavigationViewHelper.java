@@ -6,6 +6,8 @@ import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.util.Log;
 
+import com.sean.partner.utils.LogUtil;
+
 import java.lang.reflect.Field;
 
 /**
@@ -41,9 +43,9 @@ public class BottomNavigationViewHelper {
                 item.setChecked(item.getItemData().isChecked());
             }
         } catch (NoSuchFieldException e) {
-            Log.e(TAG, "Unable to get shift mode field", e);
+            LogUtil.e(TAG, "Unable to get shift mode field", e);
         } catch (IllegalAccessException e) {
-            Log.e(TAG, "Unable to change value of shift mode", e);
+            LogUtil.e(TAG, "Unable to change value of shift mode", e);
         }
     }
 }

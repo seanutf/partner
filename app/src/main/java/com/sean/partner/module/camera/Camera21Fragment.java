@@ -61,6 +61,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.sean.partner.R;
+import com.sean.partner.utils.LogUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -465,7 +466,7 @@ public class Camera21Fragment extends Fragment
         } else if (notBigEnough.size() > 0) {
             return Collections.max(notBigEnough, new CompareSizesByArea());
         } else {
-            Log.e(TAG, "Couldn't find any suitable preview size");
+            LogUtil.e(TAG, "Couldn't find any suitable preview size");
             return choices[0];
         }
     }
@@ -598,7 +599,7 @@ public class Camera21Fragment extends Fragment
                             }
                             break;
                         default:
-                            Log.e(TAG, "Display rotation is invalid: " + displayRotation);
+                            LogUtil.e(TAG, "Display rotation is invalid: " + displayRotation);
                     }
 
                     Point displaySize = new Point();
@@ -917,7 +918,7 @@ public class Camera21Fragment extends Fragment
                                                    @NonNull CaptureRequest request,
                                                    @NonNull TotalCaptureResult result) {
                         showToast("Saved: " + mFile);
-                        Log.d(TAG, mFile.toString());
+                        LogUtil.d(TAG, mFile.toString());
                         unlockFocus();
                     }
                 };
