@@ -1,4 +1,4 @@
-package com.sean.partner.meta;
+package com.sean.partner.global.meta;
 
 import cn.bmob.v3.BmobUser;
 

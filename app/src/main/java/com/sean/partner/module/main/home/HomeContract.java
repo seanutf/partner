@@ -1,8 +1,8 @@
 package com.sean.partner.module.main.home;
 
 
-import com.sean.partner.global.interfaces.BasePresenter;
-import com.sean.partner.global.interfaces.BaseView;
+import com.sean.partner.global.interfaces.presenter.BasePresenter;
+import com.sean.partner.global.interfaces.view.BaseView;
 
 /**
  * Created by sean on 2017/11/28.

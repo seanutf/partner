@@ -1,4 +1,4 @@
-package com.sean.partner.utils;
+package com.sean.partner.utils.image;
 
 /**
  * Created by sean on 2017/11/22.

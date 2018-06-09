@@ -8,7 +8,7 @@ import android.widget.Toast;
 import com.sean.partner.utils.KeyUtils;
 import com.sean.partner.utils.LogUtil;
 import com.sean.partner.utils.UserConfigures;
-import com.sean.partner.meta.User;
+import com.sean.partner.global.meta.User;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 

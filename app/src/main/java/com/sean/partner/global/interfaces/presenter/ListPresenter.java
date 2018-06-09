@@ -1,4 +1,5 @@
-package com.sean.partner.global.interfaces;
+package com.sean.partner.global.interfaces.presenter;
+
 
 /**
  * Created by Sean on 2018/3/7.

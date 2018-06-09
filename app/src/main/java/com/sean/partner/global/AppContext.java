@@ -1,6 +1,6 @@
 package com.sean.partner.global;
 
-import com.sean.partner.meta.User;
+import com.sean.partner.global.meta.User;
 
 /**
  * Created by Sean on 2018/3/12.

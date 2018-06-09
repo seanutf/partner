@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.sean.partner.MainActivity;
 import com.sean.partner.R;
-import com.sean.partner.meta.User;
+import com.sean.partner.global.meta.User;
 import com.sean.partner.module.setting.profile.view.activity.ProfileSettingActivity;
 import com.sean.partner.utils.StringUtils;
 

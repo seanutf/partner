@@ -1,6 +1,6 @@
 package com.sean.partner.module.date.mate;
 
-import com.sean.partner.meta.User;
+import com.sean.partner.global.meta.User;
 
 import cn.bmob.v3.BmobObject;
 

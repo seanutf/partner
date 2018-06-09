@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.sean.partner.R;
-import com.sean.partner.utils.ImageResourcesURL;
+import com.sean.partner.utils.image.ImageResourcesURL;
 
 /**
  * Created by sean on 2017/11/24.

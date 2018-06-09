@@ -21,9 +21,7 @@ import android.view.ViewGroup;
 
 import com.sean.partner.MainActivity;
 import com.sean.partner.R;
-import com.sean.partner.meta.User;
-import com.sean.partner.module.date.create.view.activity.CreateDateActivity;
-import com.sean.partner.module.login.view.activity.UserUnLoginActivity;
+import com.sean.partner.global.meta.User;
 import com.sean.partner.module.main.home.HomeContract;
 
 import java.util.ArrayList;

@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.sean.partner.MainFragment;
 import com.sean.partner.PartnerApplication;
 import com.sean.partner.R;
-import com.sean.partner.meta.User;
+import com.sean.partner.global.meta.User;
 import com.sean.partner.module.login.view.activity.UserUnLoginActivity;
 import com.sean.partner.utils.StringUtils;
 import com.sean.partner.utils.UserConfigures;

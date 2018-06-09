@@ -22,7 +22,7 @@ import com.sean.partner.MainActivity;
 import com.sean.partner.module.main.home.HomeContract;
 import com.sean.partner.module.main.home.HomeModelPresenter;
 import com.sean.partner.module.main.home.view.fragment.HomeFragment;
-import com.sean.partner.meta.PUser;
+import com.sean.partner.global.meta.PUser;
 import com.sean.partner.module.setting.app.view.activity.AppSettingsActivity;
 import com.sean.partner.utils.view.BottomNavigationViewHelper;
 

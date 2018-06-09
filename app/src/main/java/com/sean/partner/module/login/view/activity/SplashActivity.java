@@ -8,7 +8,7 @@ import android.view.WindowManager;
 
 import com.sean.partner.PartnerApplication;
 import com.sean.partner.R;
-import com.sean.partner.meta.User;
+import com.sean.partner.global.meta.User;
 import com.sean.partner.module.main.HomeActivity;
 import com.sean.partner.utils.UserConfigures;
 

@@ -1,4 +1,4 @@
-package com.sean.partner.meta;
+package com.sean.partner.global.meta;
 
 import android.os.Parcel;
 import android.os.Parcelable;
