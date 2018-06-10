@@ -24,7 +24,7 @@
             app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
     </android.support.design.widget.AppBarLayout>
-    <LinearLayout
+    <FrameLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
@@ -33,5 +33,5 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_appbar"
         app:layout_constraintBottom_toBottomOf="parent">
-    </LinearLayout>
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sean.partner.MainFragment;
+import com.sean.partner.R;
 
 /**
  * Created by Sean on 2018/4/16.
@@ -14,6 +15,10 @@ import com.sean.partner.MainFragment;
 
 public class ProfileSettingFragment extends MainFragment {
 
+    public static ProfileSettingFragment newInstance(){
+        return new ProfileSettingFragment();
+    }
+
     @Override
     protected void initViewData(Bundle savedInstanceState) {
 
@@ -21,7 +26,7 @@ public class ProfileSettingFragment extends MainFragment {
 
     @Override
     protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return null;
+        return inflater.inflate(R.layout.fragment_settings_profile, container, false);
     }
 
     @Override

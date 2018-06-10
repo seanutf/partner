@@ -101,4 +101,6 @@
     <string name="alert_dialog_lost_user_info_for_create">创建活动前需要补全头像和联系方式</string>
     <!-- 个人信息设置页面 -->
     <string name="title_activity_settings_profile">个人设置</string>
+    <string name="text_activity_settings_profile_name">昵称</string>
+    <string name="text_activity_settings_profile_avatar">头像</string>
 </resources>

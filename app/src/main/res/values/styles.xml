@@ -39,4 +39,18 @@
         <item name="android:windowBackground">@color/colorDayWhite</item>
     </style>
 
+    <!-- 水平线条 -->
+    <style name="Line_Horizontal_Base">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/length_size_1</item>
+        <item name="android:background">@color/list_divide_line</item>
+    </style>
+
+    <!-- 垂直线条 -->
+    <style name="Line_Vertical_Base">
+        <item name="android:layout_width">@dimen/length_size_1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/list_divide_line</item>
+    </style>
+
 </resources>

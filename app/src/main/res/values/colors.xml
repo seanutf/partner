@@ -30,4 +30,6 @@
     <color name="text_e">#ffE74C3C</color>
     <color name="text_f">#fff98700</color>
     <color name="text_activity_guide_selected">#888</color>
+
+    <color name="list_divide_line">#FFEEEEEE</color><!--列表分割线-->
 </resources>

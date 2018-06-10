@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 
 import com.sean.partner.MainActivity;
 import com.sean.partner.R;
@@ -29,9 +29,9 @@ public abstract class AppBarActivity extends MainActivity {
         mToolbar.setTitle(getAppBarTitleResId());
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        LinearLayout mActivityContainer = (LinearLayout)findViewById(R.id.activity_container);
-        View childView = getLayoutInflater().inflate(getChildViewResId(),mActivityContainer, true);
-        //mActivityContainer.addView(childView);
+        FrameLayout mActivityContainer = (FrameLayout)findViewById(R.id.activity_container);
+        View childView = getLayoutInflater().inflate(getChildViewResId(),null, false);
+        mActivityContainer.addView(childView);
         initChildView(childView);
     }
 

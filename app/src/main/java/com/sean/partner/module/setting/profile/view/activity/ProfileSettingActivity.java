@@ -8,6 +8,7 @@ import android.view.View;
 import com.sean.partner.MainActivity;
 import com.sean.partner.R;
 import com.sean.partner.global.view.AppBarActivity;
+import com.sean.partner.module.setting.profile.view.fragment.ProfileSettingFragment;
 
 /**
  * Created by Sean on 2018/4/16.
@@ -33,7 +34,8 @@ public class ProfileSettingActivity extends AppBarActivity {
 
     @Override
     public void initChildView(View childView) {
-
+        getSupportFragmentManager().beginTransaction().
+                add(R.id.container, ProfileSettingFragment.newInstance()).commitNowAllowingStateLoss();
     }
 
     @Override
